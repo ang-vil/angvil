@@ -13,6 +13,10 @@ config_version=4
 config/name="angvil"
 run/main_scene="res://scenes/Level.tscn"
 
+[global]
+
+import=false
+
 [input]
 
 key_right={
