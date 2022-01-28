@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/Angvil_logo.png" type="Texture" id=2]
+[ext_resource path="res://assets/cloud_heaven.png" type="Texture" id=3]
 [ext_resource path="res://scripts/background_left.gd" type="Script" id=4]
 [ext_resource path="res://scripts/background_right.gd" type="Script" id=5]
 
@@ -35,6 +36,54 @@ script = ExtResource( 5 )
 [node name="Sprite" type="Sprite" parent="menu_background"]
 position = Vector2( 512, 150 )
 texture = ExtResource( 2 )
+
+[node name="CloudHeaven" type="Sprite" parent="."]
+position = Vector2( 102, 116 )
+texture = ExtResource( 3 )
+
+[node name="CloudHeaven2" type="Sprite" parent="CloudHeaven"]
+position = Vector2( 197, -21 )
+texture = ExtResource( 3 )
+
+[node name="CloudHeaven3" type="Sprite" parent="CloudHeaven"]
+position = Vector2( 54, 107 )
+texture = ExtResource( 3 )
+
+[node name="CloudHeaven" type="Sprite" parent="CloudHeaven"]
+position = Vector2( 249, 159 )
+texture = ExtResource( 3 )
+
+[node name="CloudHeaven4" type="Sprite" parent="CloudHeaven"]
+position = Vector2( 338, -68 )
+texture = ExtResource( 3 )
+
+[node name="CloudHeaven5" type="Sprite" parent="CloudHeaven"]
+position = Vector2( -28, 170 )
+texture = ExtResource( 3 )
+
+[node name="CloudHeaven6" type="Sprite" parent="CloudHeaven"]
+position = Vector2( 115, -66 )
+texture = ExtResource( 3 )
+
+[node name="CloudHeaven7" type="Sprite" parent="CloudHeaven"]
+position = Vector2( 173, 77 )
+texture = ExtResource( 3 )
+
+[node name="CloudHeaven8" type="Sprite" parent="CloudHeaven"]
+position = Vector2( 371, 138 )
+texture = ExtResource( 3 )
+
+[node name="CloudHeaven9" type="Sprite" parent="CloudHeaven"]
+position = Vector2( 278, 91 )
+texture = ExtResource( 3 )
+
+[node name="CloudHeaven10" type="Sprite" parent="CloudHeaven"]
+position = Vector2( -67, -88 )
+texture = ExtResource( 3 )
+
+[node name="CloudHeaven11" type="Sprite" parent="CloudHeaven"]
+position = Vector2( -87, 96 )
+texture = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_top = 1.0
