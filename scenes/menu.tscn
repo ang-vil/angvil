@@ -41,16 +41,16 @@ texture = ExtResource( 2 )
 position = Vector2( 102, 116 )
 texture = ExtResource( 3 )
 
+[node name="CloudHeaven1" type="Sprite" parent="CloudHeaven"]
+position = Vector2( 249, 159 )
+texture = ExtResource( 3 )
+
 [node name="CloudHeaven2" type="Sprite" parent="CloudHeaven"]
 position = Vector2( 197, -21 )
 texture = ExtResource( 3 )
 
 [node name="CloudHeaven3" type="Sprite" parent="CloudHeaven"]
 position = Vector2( 54, 107 )
-texture = ExtResource( 3 )
-
-[node name="CloudHeaven" type="Sprite" parent="CloudHeaven"]
-position = Vector2( 249, 159 )
 texture = ExtResource( 3 )
 
 [node name="CloudHeaven4" type="Sprite" parent="CloudHeaven"]
