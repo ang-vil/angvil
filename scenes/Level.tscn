@@ -34,10 +34,9 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="bottom" type="Control" parent="HSplitContainer"]
-margin_top = 600.0
+margin_top = 312.0
 margin_right = 1020.0
-margin_bottom = 900.0
-rect_scale = Vector2( 1, -1 )
+margin_bottom = 600.0
 script = ExtResource( 6 )
 
 [node name="devil" type="KinematicBody2D" parent="HSplitContainer/bottom"]
