@@ -23,6 +23,7 @@ jobs:
         run: |
           mkdir -v -p ~/.local/share/godot/templates
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+          wget -O- https://github.com/Stary2001/godot/releases/download/v3.3.4-stable_switch_initial/godot-v3.3.4-linux-switch-support.tar.gz | tar xvzf -
       - name: Build
         run: ./build.sh
       - name: Upload Artifact
