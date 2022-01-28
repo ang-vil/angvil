@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://players/devil.png" type="Texture" id=1]
+[ext_resource path="res://players/angel.png" type="Texture" id=2]
+
+[node name="Level" type="Node2D"]
+
+[node name="HSplitContainer" type="VSplitContainer" parent="."]
+margin_right = 1020.0
+margin_bottom = 600.0
+split_offset = 300
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="top" type="Control" parent="HSplitContainer"]
+margin_right = 1020.0
+margin_bottom = 300.0
+
+[node name="Sprite" type="Sprite" parent="HSplitContainer/top"]
+position = Vector2( 198, 70 )
+texture = ExtResource( 2 )
+
+[node name="bottom" type="Control" parent="HSplitContainer"]
+margin_top = 312.0
+margin_right = 1020.0
+margin_bottom = 600.0
+
+[node name="Sprite" type="Sprite" parent="HSplitContainer/bottom"]
+position = Vector2( 155, 83 )
+texture = ExtResource( 1 )
