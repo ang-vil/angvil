@@ -12,19 +12,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Icon" type="Sprite" parent="HSplitContainer"]
-position = Vector2( 219, 106 )
-texture = ExtResource( 1 )
-
-[node name="Icon2" type="Sprite" parent="HSplitContainer"]
-position = Vector2( 277, 423 )
-texture = ExtResource( 1 )
-
 [node name="top" type="Container" parent="HSplitContainer"]
 margin_right = 1020.0
 margin_bottom = 300.0
+
+[node name="angel" type="Sprite" parent="HSplitContainer/top"]
+position = Vector2( 219, 106 )
+texture = ExtResource( 1 )
 
 [node name="bottom" type="Container" parent="HSplitContainer"]
 margin_top = 312.0
 margin_right = 1020.0
 margin_bottom = 603.0
+
+[node name="devil" type="Sprite" parent="HSplitContainer/bottom"]
+position = Vector2( 277, 111 )
+texture = ExtResource( 1 )
