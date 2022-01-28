@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/devil.png-4051adbbc389f08bb061b3b44e3bcdc8.stex"
+path="res://.import/angel.png-09c8b76f633091129b58f72be73d09cf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://players/devil.png"
-dest_files=[ "res://.import/devil.png-4051adbbc389f08bb061b3b44e3bcdc8.stex" ]
+source_file="res://assets/angel.png"
+dest_files=[ "res://.import/angel.png-09c8b76f633091129b58f72be73d09cf.stex" ]
 
 [params]
 
