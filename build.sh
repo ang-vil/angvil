@@ -18,4 +18,8 @@ echo 'Building for Windows ...'
 godot --export 'Windows Desktop' dist/angvil.exe
 echo 'done.'
 
+echo 'Building for Switch ...'
+godot-switch-v3.3.4-linux/godot.x11.opt.tools.64 --export 'Switch' dist/angvil.nro
+echo 'done.'
+
 echo 'done.'
