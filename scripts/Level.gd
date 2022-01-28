@@ -24,7 +24,7 @@ func _input(event):
 		keys_typed.append(OS.get_scancode_string(event.scancode))
 		# Quit on Escape press.
 		if event.scancode == KEY_ESCAPE:
-			get_tree().quit()
+			var active_scene = get_tree().change_scene("res://scenes/menu.tscn")
 	# Quit on any mouse click.
 	# if event is InputEventMouseButton:
 	#	quit = true
