@@ -1,21 +1,18 @@
 extends KinematicBody2D
 
-export (int) var speed = 200
+var vars = preload("res://scripts/constants.gd")
 
 var velocity = Vector2()
 
-func get_input():
+func get_input(delta):
 	velocity = Vector2()
 	if Input.is_action_pressed("key_right"):
-		velocity.x += 1
+		velocity.x = vars.WALK_SPEED
 	if Input.is_action_pressed("key_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("key_down"):
-		velocity.y -= 1
-	if Input.is_action_pressed("key_up"):
-		velocity.y += 1
-	velocity = velocity.normalized() * speed
+		velocity.x = -vars.WALK_SPEED
+	
+	velocity.y -= delta * vars.GRAVITY
 
 func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity)
+	get_input(delta)
+	velocity = move_and_slide(velocity, Vector2(0, -1))

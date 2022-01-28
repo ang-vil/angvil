@@ -1,0 +1,2 @@
+const GRAVITY = 10000.0
+const WALK_SPEED = 200
