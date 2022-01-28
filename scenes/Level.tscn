@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/angel.gd" type="Script" id=1]
 [ext_resource path="res://assets/angel.png" type="Texture" id=2]
@@ -8,8 +8,6 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.5, 31.5 )
-
-[sub_resource type="LineShape2D" id=2]
 
 [node name="Level" type="Node2D"]
 
@@ -36,9 +34,10 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="bottom" type="Control" parent="HSplitContainer"]
-margin_top = 312.0
+margin_top = 600.0
 margin_right = 1020.0
-margin_bottom = 600.0
+margin_bottom = 900.0
+rect_scale = Vector2( 1, -1 )
 script = ExtResource( 6 )
 
 [node name="devil" type="KinematicBody2D" parent="HSplitContainer/bottom"]
@@ -50,9 +49,3 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HSplitContainer/bottom/devil"]
 shape = SubResource( 1 )
-
-[node name="Line2D" type="StaticBody2D" parent="HSplitContainer"]
-position = Vector2( 510, 300 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HSplitContainer/Line2D"]
-shape = SubResource( 2 )
