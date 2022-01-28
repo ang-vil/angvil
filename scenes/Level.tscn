@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/angel.gd" type="Script" id=1]
 [ext_resource path="res://assets/angel.png" type="Texture" id=2]
 [ext_resource path="res://assets/devil.png" type="Texture" id=3]
 [ext_resource path="res://scripts/devil.gd" type="Script" id=4]
+[ext_resource path="res://assets/Angvil_logo.png" type="Texture" id=5]
 [ext_resource path="res://scripts/bottom.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -37,6 +38,12 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HSplitContainer/top/angel"]
 shape = SubResource( 1 )
 
+[node name="Camera2D" type="Camera2D" parent="HSplitContainer/top/angel"]
+position = Vector2( 0, 50 )
+scale = Vector2( 0.5, 0.5 )
+current = true
+smoothing_enabled = true
+
 [node name="bottom" type="Control" parent="HSplitContainer"]
 margin_top = 300.0
 margin_right = 1020.0
@@ -68,3 +75,7 @@ rotation = 3.14159
 shape = SubResource( 2 )
 one_way_collision = true
 one_way_collision_margin = 0.0
+
+[node name="logosprite" type="Sprite" parent="."]
+position = Vector2( -40, 144 )
+texture = ExtResource( 5 )
