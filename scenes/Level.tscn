@@ -37,6 +37,12 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HSplitContainer/top/angel"]
 shape = SubResource( 1 )
 
+[node name="Camera2D" type="Camera2D" parent="HSplitContainer/top/angel"]
+position = Vector2( 0, 50 )
+scale = Vector2( 0.5, 0.5 )
+current = true
+smoothing_enabled = true
+
 [node name="bottom" type="Control" parent="HSplitContainer"]
 margin_top = 300.0
 margin_right = 1020.0
