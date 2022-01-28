@@ -30,18 +30,24 @@ text = "Fullscreen"
 margin_top = 28.0
 margin_right = 94.0
 margin_bottom = 48.0
+focus_neighbour_top = NodePath("../ExitButton")
+focus_neighbour_bottom = NodePath("../StartButton")
 text = "options"
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 margin_top = 52.0
 margin_right = 94.0
 margin_bottom = 72.0
+focus_neighbour_top = NodePath("../OptionsButton")
+focus_neighbour_bottom = NodePath("../ExitButton")
 text = "run game"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 margin_top = 76.0
 margin_right = 94.0
 margin_bottom = 96.0
+focus_neighbour_top = NodePath("../StartButton")
+focus_neighbour_bottom = NodePath("../OptionsButton")
 text = "leave game"
 
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
