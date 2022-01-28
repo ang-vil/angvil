@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/angel.gd" type="Script" id=1]
 [ext_resource path="res://assets/angel.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14, 16 )
+
+[sub_resource type="LineShape2D" id=2]
 
 [node name="Level" type="Node2D"]
 
@@ -50,3 +52,9 @@ texture = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HSplitContainer/bottom/devil"]
 position = Vector2( -0.5, 0 )
 shape = SubResource( 1 )
+
+[node name="middleline" type="StaticBody2D" parent="HSplitContainer"]
+position = Vector2( 510, 300 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HSplitContainer/middleline"]
+shape = SubResource( 2 )
