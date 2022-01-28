@@ -28,6 +28,7 @@ margin_bottom = 300.0
 
 [node name="angel" type="KinematicBody2D" parent="HSplitContainer/top"]
 position = Vector2( 150, 250 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="HSplitContainer/top/angel"]
@@ -44,6 +45,7 @@ script = ExtResource( 6 )
 
 [node name="devil" type="KinematicBody2D" parent="HSplitContainer/bottom"]
 position = Vector2( 150, 250 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="HSplitContainer/bottom/devil"]
