@@ -17,6 +17,7 @@ extents = Vector2( 31.5, 31.5 )
 margin_right = 1020.0
 margin_bottom = 600.0
 split_offset = 300
+dragger_visibility = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
