@@ -23,7 +23,9 @@ func _ready():
 		var t = "%s x %s" % [x, y]
 		$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.add_item(t, k)
 		$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(k, Vector2(x, y))
-		
+	
+	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.select(2)
+	OS.set_window_size($OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.get_item_metadata(2))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
