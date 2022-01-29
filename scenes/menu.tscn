@@ -91,14 +91,14 @@ position = Vector2( -67, -88 )
 texture = ExtResource( 3 )
 
 [node name="CloudHeaven11" type="Sprite" parent="CloudHeaven"]
-position = Vector2( -87, 96 )
+position = Vector2( -83, 95 )
 texture = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
-margin_top = -256.0
+margin_top = -299.0
 margin_right = 158.0
 margin_bottom = -160.0
 theme = SubResource( 2 )
@@ -127,10 +127,18 @@ focus_neighbour_top = NodePath("../OptionsButton")
 focus_neighbour_bottom = NodePath("../ExitButton")
 text = "run game"
 
-[node name="ExitButton" type="Button" parent="VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
 margin_top = 143.0
 margin_right = 198.0
 margin_bottom = 186.0
+focus_neighbour_top = NodePath("../OptionsButton")
+focus_neighbour_bottom = NodePath("../ExitButton")
+text = "credits"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+margin_top = 190.0
+margin_right = 198.0
+margin_bottom = 233.0
 focus_neighbour_top = NodePath("../StartButton")
 focus_neighbour_bottom = NodePath("../OptionsButton")
 text = "leave game"
@@ -145,6 +153,37 @@ margin_top = 572.0
 margin_right = 1013.0
 margin_bottom = 588.0
 text = "Credit to https://www.FesliyanStudios.com for the background music."
+
+[node name="CreditsPopupPanel" type="PopupPanel" parent="."]
+margin_right = 1024.0
+margin_bottom = 550.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsPopupPanel"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 974.0
+margin_bottom = 550.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsRichTextLabel" type="RichTextLabel" parent="CreditsPopupPanel/VBoxContainer"]
+margin_right = 924.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+text = "ANG/VIL
+
+hier credits einfügen"
+
+[node name="CreditsCloseButton" type="Button" parent="CreditsPopupPanel/VBoxContainer"]
+margin_top = 54.0
+margin_right = 924.0
+margin_bottom = 74.0
+text = "close credits"
+
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -152,4 +191,6 @@ __meta__ = {
 [connection signal="pressed" from="VBoxContainer/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="CreditsPopupPanel/VBoxContainer/CreditsCloseButton" to="." method="_on_CreditsCloseButton_pressed"]

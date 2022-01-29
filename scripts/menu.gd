@@ -40,3 +40,11 @@ func _on_ExitButton_pressed():
 
 func _on_FullscreenCheckBox_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
+
+
+func _on_CreditsButton_pressed():
+	$CreditsPopupPanel.popup()
+
+
+func _on_CreditsCloseButton_pressed():
+	$CreditsPopupPanel.visible = false
