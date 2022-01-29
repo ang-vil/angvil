@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fonts/share-tech-mono/ShareTechMono-Regular.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[node name="hud" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AngelScore" type="RichTextLabel" parent="Control"]
+modulate = Color( 0, 0.00392157, 1, 1 )
+margin_right = 224.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 312, 280 )
+theme = SubResource( 6 )
+text = "Angel Score: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AngelScoreLabel" type="RichTextLabel" parent="Control"]
+modulate = Color( 0, 0.00392157, 1, 1 )
+margin_left = 200.0
+margin_right = 272.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 112, 280 )
+theme = SubResource( 6 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DevilScore" type="RichTextLabel" parent="Control"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 752.0
+margin_top = 560.0
+margin_right = 976.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 312, 280 )
+theme = SubResource( 6 )
+text = "Devil Score: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DevilScoreLabel" type="RichTextLabel" parent="Control"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 952.0
+margin_top = 560.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 112, 280 )
+theme = SubResource( 6 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
