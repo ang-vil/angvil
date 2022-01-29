@@ -41,3 +41,7 @@ func _on_OptionsButton_pressed():
 
 func _on_ExitButton_pressed():
 	get_tree().quit()
+
+
+func _on_FullscreenCheckBox_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen

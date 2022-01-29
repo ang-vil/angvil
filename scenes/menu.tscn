@@ -105,7 +105,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer"]
+[node name="FullscreenCheckBox" type="CheckBox" parent="VBoxContainer"]
 margin_right = 198.0
 margin_bottom = 45.0
 text = "Fullscreen"
@@ -134,6 +134,7 @@ focus_neighbour_top = NodePath("../StartButton")
 focus_neighbour_bottom = NodePath("../OptionsButton")
 text = "leave game"
 
+[connection signal="pressed" from="VBoxContainer/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
