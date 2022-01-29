@@ -17,7 +17,7 @@ func get_input(delta):
 		# smoothen walk
 		velocity.x = lerp(velocity.x, 0, 0.1)
 
-	if Input.is_action_pressed("key_up") and velocity.y == 0:
+	if Input.is_action_just_pressed("key_up") and velocity.y == 0:
 		jumping = true;
 		$jumpsound.play()
 
