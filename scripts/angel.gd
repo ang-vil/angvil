@@ -6,6 +6,8 @@ var math = preload("res://scripts/helper/math.gd")
 var velocity = Vector2()
 var jumping = false
 
+var bullet = preload("res://scenes/bullet.tscn")
+
 func get_input(delta):
 	if Input.is_action_pressed("key_right"):
 		get_node("Sprite").set_flip_h(false)
@@ -16,6 +18,9 @@ func get_input(delta):
 	else:
 		# smoothen walk
 		velocity.x = lerp(velocity.x, 0, 0.1)
+		
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
 
 	if Input.is_action_pressed("key_up") and velocity.y == 0:
 		jumping = true;
@@ -28,6 +33,11 @@ func get_input(delta):
 			jumping = false
 	else:
 		velocity.y += delta * vars.GRAVITY
+
+func shoot():
+	var b = bullet.instance()
+	owner.add_child(b)
+	b.transform = $bulletspawn.global_transform
 
 func _physics_process(delta):
 	get_input(delta)
