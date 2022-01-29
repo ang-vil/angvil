@@ -54,8 +54,12 @@ func _input(event):
 	if event is InputEventKey and event.pressed and !event.echo:
 		# Quit on Escape press.
 		if event.scancode == KEY_ESCAPE:
-			get_tree().quit()
-
+			if $OptionsPopupPanel.visible:
+				$OptionsPopupPanel.visible = false
+			elif $CreditsPopupPanel.visible:
+				$CreditsPopupPanel.visible = false
+			else:
+				get_tree().quit()
 
 func _on_StartButton_pressed():
 	var _active_scene = get_tree().change_scene("res://scenes/levels/w1-1.tscn")
