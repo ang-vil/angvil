@@ -9,6 +9,12 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$VBoxContainer/StartButton.grab_focus()
+	# hide exit button in Browser
+	if OS.get_name() == "HTML5":
+		$VBoxContainer/ExitButton.visible = false
+	# hide exit button on Nintento Switch
+	if OS.get_name() == "Switch":
+		$VBoxContainer/ExitButton.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
