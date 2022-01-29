@@ -9,6 +9,7 @@ extents = Vector2( 14, 16 )
 [node name="devil" type="KinematicBody2D"]
 position = Vector2( 0, 100 )
 scale = Vector2( 2, 2 )
+collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -20,3 +21,5 @@ position = Vector2( -0.5, 0 )
 shape = SubResource( 1 )
 
 [node name="bulletspawn" type="Position2D" parent="."]
+
+[node name="devil_visibility" type="VisibilityNotifier2D" parent="."]

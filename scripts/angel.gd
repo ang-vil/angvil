@@ -25,7 +25,7 @@ func get_input(delta):
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 
-	if Input.is_action_pressed("key_up") and velocity.y == 0:
+	if Input.is_action_just_pressed("key_up") and velocity.y == 0:
 		jumping = true;
 		$jumpsound.play()
 
@@ -46,3 +46,9 @@ func shoot():
 func _physics_process(delta):
 	get_input(delta)
 	velocity = move_and_slide(velocity)
+
+func _process(delta):
+	yield(get_tree(), "idle_frame")
+	if not get_node('angle_visibility').is_on_screen():
+		var background = get_node("../background/")
+		background.colorHeaven = background.HELL_COLOR

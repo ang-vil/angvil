@@ -9,6 +9,12 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$VBoxContainer/StartButton.grab_focus()
+	# hide exit button in Browser
+	if OS.get_name() == "HTML5":
+		$VBoxContainer/ExitButton.visible = false
+	# hide exit button on Nintento Switch
+	if OS.get_name() == "Switch":
+		$VBoxContainer/ExitButton.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,12 +32,15 @@ func _input(event):
 
 
 func _on_StartButton_pressed():
-	var active_scene = get_tree().change_scene("res://scenes/level.tscn")
+	var active_scene = get_tree().change_scene("res://scenes/w1-1.tscn")
 
 
 func _on_OptionsButton_pressed():
-	# if we have a lot of option we can add a option scene
-	pass # Replace with function body.
+	$OptionsPopupPanel.popup()
+
+
+func _on_OptionsCloseButton_pressed():
+	$OptionsPopupPanel.visible = false
 
 
 func _on_ExitButton_pressed():
