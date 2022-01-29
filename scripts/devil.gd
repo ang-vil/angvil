@@ -27,6 +27,17 @@ func get_input(delta):
 
 	if Input.is_action_just_pressed("key_up") and velocity.y == 0:
 		jumping = true;
+		
+	if Input.is_action_pressed("key_down"):
+		get_node("Sprite").scale.y = -0.5
+		get_node("Sprite").offset.y = 20
+		get_node("CollisionShape2D").scale.y = 0.5
+		get_node("CollisionShape2D").position.y = -8
+	else:
+		get_node("Sprite").scale.y = -1
+		get_node("Sprite").offset.y = 0
+		get_node("CollisionShape2D").scale.y = 1
+		get_node("CollisionShape2D").position.y = 0
 
 	if jumping:
 		velocity.y = lerp(velocity.y, vars.JUMP_SPEED, 0.8)
@@ -43,7 +54,7 @@ func shoot():
 	b.transform = $bulletspawn.global_transform
 
 func _physics_process(delta):
-	if get_node("..").gameOver:
+	if get_node("..").isGameOver:
 		velocity = Vector2()
 	else:
 		get_input(delta)
@@ -54,7 +65,4 @@ func _process(_delta):
 	if not get_node('devil_visibility').is_on_screen():
 		var background = get_node("../background/")
 		background.colorHell = background.HEAVEN_COLOR
-		get_node("..").gameOver = true
-		var text = get_node("../camera/layer/gameOverText")
-		text.text = 'ANGEL wins!'
-		text.visible = true
+		get_node("..").gameOver('ANGEL wins!')

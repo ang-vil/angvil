@@ -31,6 +31,17 @@ func get_input(delta):
 	if Input.is_action_just_pressed("key_up") and velocity.y == 0:
 		jumping = true;
 		$jumpsound.play()
+		
+	if Input.is_action_pressed("key_down"):
+		get_node("Sprite").scale.y = 0.5
+		get_node("Sprite").offset.y = 20
+		get_node("CollisionShape2D").scale.y = 0.5
+		get_node("CollisionShape2D").position.y = 8
+	else:
+		get_node("Sprite").scale.y = 1
+		get_node("Sprite").offset.y = 0
+		get_node("CollisionShape2D").scale.y = 1
+		get_node("CollisionShape2D").position.y = 0
 
 	if jumping:
 		velocity.y = lerp(velocity.y, vars.JUMP_SPEED*-1, 0.8)
@@ -47,7 +58,7 @@ func shoot():
 	b.transform = $bulletspawn.global_transform
 
 func _physics_process(delta):
-	if get_node("..").gameOver:
+	if get_node("..").isGameOver:
 		velocity = Vector2()
 	else:
 		get_input(delta)
@@ -58,7 +69,4 @@ func _process(_delta):
 	if not get_node('angle_visibility').is_on_screen():
 		var background = get_node("../background/")
 		background.colorHeaven = background.HELL_COLOR
-		get_node("..").gameOver = true
-		var text = get_node("../camera/layer/gameOverText")
-		text.text = 'DEVIL wins!'
-		text.visible = true
+		get_node("..").gameOver('DEVIL wins!')

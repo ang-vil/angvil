@@ -83,6 +83,6 @@ func _on_CheckButton_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
 
 
-func _on_OptionButton_item_selected(index):
+func _on_OptionButton_item_selected(_index):
 	var id = $OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.get_selected_id()
 	OS.set_window_size($OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.get_item_metadata(id))
