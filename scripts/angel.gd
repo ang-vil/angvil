@@ -50,7 +50,7 @@ func _physics_process(delta):
 		get_input(delta)
 	velocity = move_and_slide(velocity)
 
-func _process(delta):
+func _process(_delta):
 	yield(get_tree(), "idle_frame")
 	if not get_node('angle_visibility').is_on_screen():
 		var background = get_node("../background/")
