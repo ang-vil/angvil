@@ -6,16 +6,16 @@ rm -rf dist/
 mkdir -p dist
 
 echo 'Building for web ...'
-godot --export "HTML5" dist/index.html
+godot --no-window --export "HTML5" dist/index.html
 echo 'done.'
 
 echo 'Building for linux ...'
-godot --export 'Linux/X11' dist/angvil.x86_64
+godot --no-window --export 'Linux/X11' dist/angvil.x86_64
 chmod a+x dist/angvil.x86_64
 echo 'done.'
 
 echo 'Building for Windows ...'
-godot --export 'Windows Desktop' dist/angvil.exe
+godot --no-window --export 'Windows Desktop' dist/angvil.exe
 echo 'done.'
 
 echo 'Building for Switch ...'
