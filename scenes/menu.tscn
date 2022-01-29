@@ -32,16 +32,14 @@ __meta__ = {
 
 [node name="background_left" type="ColorRect" parent="menu_background"]
 margin_bottom = 600.0
-rect_rotation = 15.0
 color = Color( 0.615686, 0.819608, 0.905882, 1 )
 script = ExtResource( 4 )
 
 [node name="background_right" type="ColorRect" parent="menu_background"]
-margin_left = 577.0
-margin_right = 1589.0
+margin_left = 12.0
+margin_right = 1024.0
 margin_bottom = 600.0
-rect_rotation = 15.0
-color = Color( 0.215686, 0.211765, 0.211765, 1 )
+color = Color( 0.235294, 0.235294, 0.235294, 1 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="menu_background"]
