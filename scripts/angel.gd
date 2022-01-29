@@ -17,6 +17,7 @@ func get_input(delta):
 
 	if Input.is_action_pressed("key_up") and velocity.y == 0:
 		jumping = true;
+		$jumpsound.play()
 
 	if jumping:
 		velocity.y = lerp(velocity.y, vars.JUMP_SPEED*-1, 0.6)
