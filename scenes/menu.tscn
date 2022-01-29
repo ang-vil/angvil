@@ -178,16 +178,17 @@ __meta__ = {
 
 [node name="CreditsRichTextLabel" type="RichTextLabel" parent="CreditsPopupPanel/CreditsVBoxContainer"]
 margin_right = 916.0
-margin_bottom = 444.0
+margin_bottom = 445.0
 rect_min_size = Vector2( 50, 444 )
+size_flags_vertical = 3
 text = "ANG/VIL
 
 Credit to https://www.FesliyanStudios.com for the background music."
 
 [node name="CreditsCloseButton" type="Button" parent="CreditsPopupPanel/CreditsVBoxContainer"]
-margin_top = 448.0
+margin_top = 449.0
 margin_right = 916.0
-margin_bottom = 491.0
+margin_bottom = 492.0
 text = "close credits"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -223,7 +224,6 @@ margin_right = 916.0
 margin_bottom = 92.0
 
 [node name="Label" type="Label" parent="OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer"]
-margin_left = 8.0
 margin_top = 3.0
 margin_right = 456.0
 margin_bottom = 40.0
@@ -237,10 +237,23 @@ margin_bottom = 43.0
 size_flags_horizontal = 3
 align = 1
 
-[node name="OptionsCloseButton" type="Button" parent="OptionsPopupPanel/OptionsVBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="OptionsPopupPanel/OptionsVBoxContainer"]
 margin_top = 96.0
 margin_right = 916.0
-margin_bottom = 139.0
+margin_bottom = 445.0
+size_flags_vertical = 3
+text = " 
+ 
+ 
+ 
+ 
+ 
+ "
+
+[node name="OptionsCloseButton" type="Button" parent="OptionsPopupPanel/OptionsVBoxContainer"]
+margin_top = 449.0
+margin_right = 916.0
+margin_bottom = 492.0
 text = "close options"
 __meta__ = {
 "_edit_use_anchors_": false
