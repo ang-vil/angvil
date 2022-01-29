@@ -6,16 +6,24 @@ var math = preload("res://scripts/helper/math.gd")
 var velocity = Vector2()
 var jumping = false
 
+var bullet = preload("res://scenes/bullet.tscn")
+var direction = Vector2(1, 0)
+
 func get_input(delta):
 	if Input.is_action_pressed("key_right"):
 		get_node("Sprite").set_flip_h(false)
+		direction.x = 1
 		velocity.x = lerp(velocity.x, vars.WALK_SPEED, 0.3)
 	elif Input.is_action_pressed("key_left"):
 		get_node("Sprite").set_flip_h(true)
+		direction.x = -1
 		velocity.x = lerp(velocity.x, vars.WALK_SPEED*-1, 0.3)
 	else:
 		# smoothen walk
 		velocity.x = lerp(velocity.x, 0, 0.1)
+
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
 
 	if Input.is_action_just_pressed("key_up") and velocity.y == 0:
 		jumping = true;
@@ -28,8 +36,15 @@ func get_input(delta):
 	else:
 		velocity.y -= delta * vars.GRAVITY
 
+func shoot():
+	var b = bullet.instance()
+	b.direction = direction
+	owner.add_child(b)
+	b.transform = $bulletspawn.global_transform
+
 func _physics_process(delta):
-	get_input(delta)
+	if not get_node("..").gameOver:
+		get_input(delta)
 	velocity = move_and_slide(velocity)
 
 func _process(delta):
@@ -37,3 +52,4 @@ func _process(delta):
 	if not get_node('devil_visibility').is_on_screen():
 		var background = get_node("../background/")
 		background.colorHell = background.HEAVEN_COLOR
+		get_node("..").gameOver = true
