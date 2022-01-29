@@ -12,10 +12,12 @@ func _ready():
 	# hide exit button in Browser
 	if OS.get_name() == "HTML5":
 		$VBoxContainer/ExitButton.visible = false
+		$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer.visible = false
 		
 	# hide exit button on Nintento Switch
 	if OS.get_name() == "Switch":
 		$VBoxContainer/ExitButton.visible = false
+		$VBoxContainer/OptionsButton = false
 	
 	# OptionButton Options
 	var max_x_res = OS.get_screen_size().x
