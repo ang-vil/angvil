@@ -43,13 +43,18 @@ func shoot():
 	b.transform = $bulletspawn.global_transform
 
 func _physics_process(delta):
-	if not get_node("..").gameOver:
+	if get_node("..").gameOver:
+		velocity = Vector2()
+	else:
 		get_input(delta)
 	velocity = move_and_slide(velocity)
 
-func _process(delta):
+func _process(_delta):
 	yield(get_tree(), "idle_frame")
 	if not get_node('devil_visibility').is_on_screen():
 		var background = get_node("../background/")
 		background.colorHell = background.HEAVEN_COLOR
 		get_node("..").gameOver = true
+		var text = get_node("../camera/layer/gameOverText")
+		text.text = 'ANGEL wins!'
+		text.visible = true
