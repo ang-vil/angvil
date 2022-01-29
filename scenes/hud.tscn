@@ -27,18 +27,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DebugText" type="RichTextLabel" parent="Control"]
-modulate = Color( 0, 0.00392157, 1, 1 )
-margin_left = 8.0
-margin_top = 536.0
-margin_right = 728.0
-margin_bottom = 576.0
-rect_pivot_offset = Vector2( 312, 280 )
-theme = SubResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="AngelScore" type="RichTextLabel" parent="Control"]
 modulate = Color( 0, 0.00392157, 1, 1 )
 margin_right = 208.0
