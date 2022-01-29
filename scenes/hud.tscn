@@ -106,6 +106,7 @@ __meta__ = {
 }
 
 [node name="touchButtonsRight" type="Control" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -124,6 +125,7 @@ normal = ExtResource( 3 )
 action = "shoot"
 
 [node name="touchButtonsLeft" type="Control" parent="."]
+visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -296.0
