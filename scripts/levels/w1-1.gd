@@ -13,7 +13,5 @@ func _ready():
 
 func _input(event):
 	# Record keys.
-	if event is InputEventKey and event.pressed and !event.echo:
-		# Quit on Escape press.
-		if event.scancode == KEY_ESCAPE:
-			get_tree().quit()
+	if Input.is_action_pressed("key_pause"):
+			get_tree().change_scene("res://scenes/menu.tscn")
