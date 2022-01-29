@@ -43,7 +43,9 @@ func shoot():
 	b.transform = $bulletspawn.global_transform
 
 func _physics_process(delta):
-	if not get_node("..").gameOver:
+	if get_node("..").gameOver:
+		velocity = Vector2()
+	else:
 		get_input(delta)
 	velocity = move_and_slide(velocity)
 
