@@ -1,6 +1,6 @@
 extends Node
 
-var gameOver = false
+var isGameOver = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +13,7 @@ func _input(_event):
 			var _active_scene = get_tree().change_scene("res://scenes/menu.tscn")
 
 func gameOver(message):
-	gameOver = true
+	isGameOver = true
 	var text = get_node("camera/layer/gameOverText")
 	text.text = message
 	text.visible = true
