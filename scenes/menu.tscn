@@ -261,7 +261,7 @@ __meta__ = {
 [node name="CheckButton" type="CheckButton" parent="OptionsPopupPanel/OptionsVBoxContainer"]
 margin_right = 916.0
 margin_bottom = 45.0
-text = "Fullscreen"
+text = "fullscreen"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="OptionsPopupPanel/OptionsVBoxContainer"]
 margin_top = 49.0
@@ -282,8 +282,64 @@ margin_bottom = 43.0
 size_flags_horizontal = 3
 align = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="OptionsPopupPanel/OptionsVBoxContainer"]
+[node name="MenuMusicValueHBoxContainer" type="HBoxContainer" parent="OptionsPopupPanel/OptionsVBoxContainer"]
 margin_top = 96.0
+margin_right = 916.0
+margin_bottom = 133.0
+
+[node name="MenuMusicValueLabel1" type="Label" parent="OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer"]
+margin_right = 420.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+text = "menu music volume"
+
+[node name="MenuMusicValueLabel2" type="Label" parent="OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer"]
+margin_left = 424.0
+margin_right = 492.0
+margin_bottom = 37.0
+text = "100%"
+align = 1
+
+[node name="MenuMusicValueHSlider" type="HSlider" parent="OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer"]
+margin_left = 496.0
+margin_right = 916.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 120.0
+step = 5.0
+value = 100.0
+
+[node name="GameMusicValueHBoxContainer" type="HBoxContainer" parent="OptionsPopupPanel/OptionsVBoxContainer"]
+margin_top = 137.0
+margin_right = 916.0
+margin_bottom = 174.0
+
+[node name="GameMusicValueLabel1" type="Label" parent="OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer"]
+margin_right = 420.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+text = "game music volume"
+
+[node name="GameMusicValueLabel2" type="Label" parent="OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer"]
+margin_left = 424.0
+margin_right = 492.0
+margin_bottom = 37.0
+text = "100%"
+align = 1
+
+[node name="GameMusicValueHSlider" type="HSlider" parent="OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer"]
+margin_left = 496.0
+margin_right = 916.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 120.0
+step = 5.0
+value = 100.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OptionsPopupPanel/OptionsVBoxContainer"]
+margin_top = 178.0
 margin_right = 916.0
 margin_bottom = 445.0
 size_flags_vertical = 3
@@ -313,4 +369,6 @@ __meta__ = {
 [connection signal="pressed" from="HelpPopupPanel/HelpVBoxContainer/HelpCloseButton" to="." method="_on_HelpCloseButton_pressed"]
 [connection signal="pressed" from="OptionsPopupPanel/OptionsVBoxContainer/CheckButton" to="." method="_on_CheckButton_pressed"]
 [connection signal="item_selected" from="OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="value_changed" from="OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueHSlider" to="." method="_on_MenuMusicValueHSlider_value_changed"]
+[connection signal="value_changed" from="OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueHSlider" to="." method="_on_GameMusicValueHSlider_value_changed"]
 [connection signal="pressed" from="OptionsPopupPanel/OptionsVBoxContainer/OptionsCloseButton" to="." method="_on_OptionsCloseButton_pressed"]

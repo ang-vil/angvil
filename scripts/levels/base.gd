@@ -4,7 +4,8 @@ var isGameOver = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	# set music volume from settings
+	$music.volume_db = Settings.game_music_value_g
 
 
 func _input(_event):

@@ -41,6 +41,8 @@ func _ready():
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(3, Vector2(new_x_res, new_y_res))
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.select(1)
 	_on_OptionButton_item_selected(1)
+	
+	$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel1.text = String($AudioStreamPlayer.volume_db)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -104,3 +106,24 @@ func _on_HelpButton_pressed():
 
 func _on_HelpCloseButton_pressed():
 	$HelpPopupPanel.visible = false
+
+
+func _on_GameMusicValueHSlider_value_changed(value):
+	var game_music_value = $OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueHSlider.value
+	$OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueLabel2.text = String(game_music_value) + "%"
+	if game_music_value <= 100:
+		Settings.game_music_value_g = round(game_music_value / 1.25 - 80)
+	if game_music_value > 100:
+		Settings.game_music_value_g = game_music_value - 100
+	
+
+func _on_MenuMusicValueHSlider_value_changed(value):
+	var menu_music_value = $OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueHSlider.value
+	$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel2.text = String(menu_music_value) + "%"
+	if menu_music_value <= 100:
+		$AudioStreamPlayer.volume_db = round(menu_music_value / 1.25 - 80)
+		$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel1.text = String($AudioStreamPlayer.volume_db)
+	if menu_music_value > 100:
+		$AudioStreamPlayer.volume_db = menu_music_value - 100
+		$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel1.text = String($AudioStreamPlayer.volume_db)
+	
