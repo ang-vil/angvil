@@ -96,3 +96,11 @@ func _on_OptionButton_item_selected(_index):
 	# var screen_size = OS.get_screen_size()
 	# var window_size = OS.get_window_size()
 	# OS.set_window_position(screen_size*0.5 - window_size*0.5)
+
+
+func _on_HelpButton_pressed():
+	$HelpPopupPanel.visible = true
+
+
+func _on_HelpCloseButton_pressed():
+	$HelpPopupPanel.visible = false

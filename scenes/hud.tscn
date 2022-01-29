@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/fonts/share-tech-mono/ShareTechMono-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/touchbuttons/buttonUp.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/touchbuttons/buttonDown.png" type="Texture" id=5]
 [ext_resource path="res://assets/touchbuttons/buttonLeft.png" type="Texture" id=6]
 [ext_resource path="res://scripts/hud.gd" type="Script" id=7]
+[ext_resource path="res://assets/Heart_Red.png" type="Texture" id=8]
+[ext_resource path="res://assets/Heart_Purple.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
@@ -26,9 +28,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -272.0
+margin_left = -304.0
 margin_top = -40.0
-margin_right = -50.0
+margin_right = -82.0
 rect_pivot_offset = Vector2( 312, 280 )
 theme = SubResource( 6 )
 text = "Devil Score: "
@@ -36,32 +38,61 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DevilScore" type="RichTextLabel" parent="."]
-modulate = Color( 1, 0, 0, 1 )
+[node name="DevilScore" type="HSplitContainer" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -76.0
+margin_left = -120.0
 margin_top = -40.0
+margin_right = -8.0
 rect_pivot_offset = Vector2( 112, 280 )
 theme = SubResource( 6 )
-text = "0000"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AngelScore" type="RichTextLabel" parent="."]
-modulate = Color( 0, 0.00392157, 1, 1 )
-margin_left = 200.0
-margin_right = 272.0
+[node name="DevilHeart1" type="Sprite" parent="DevilScore"]
+position = Vector2( 24, 16 )
+texture = ExtResource( 9 )
+
+[node name="DevilHeart2" type="Sprite" parent="DevilScore"]
+position = Vector2( 96, 16 )
+texture = ExtResource( 9 )
+
+[node name="DevilHeart3" type="Sprite" parent="DevilScore"]
+position = Vector2( 72, 16 )
+texture = ExtResource( 9 )
+
+[node name="DevilHeart4" type="Sprite" parent="DevilScore"]
+position = Vector2( 48, 16 )
+texture = ExtResource( 9 )
+
+[node name="AngelScore" type="HSplitContainer" parent="."]
+margin_left = 184.0
+margin_right = 296.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 112, 280 )
 theme = SubResource( 6 )
-text = "0000"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AngelHeart1" type="Sprite" parent="AngelScore"]
+position = Vector2( 24, 16 )
+texture = ExtResource( 8 )
+
+[node name="AngelHeart2" type="Sprite" parent="AngelScore"]
+position = Vector2( 48, 16 )
+texture = ExtResource( 8 )
+
+[node name="AngelHeart3" type="Sprite" parent="AngelScore"]
+position = Vector2( 72, 16 )
+texture = ExtResource( 8 )
+
+[node name="AngelHeart4" type="Sprite" parent="AngelScore"]
+position = Vector2( 96, 16 )
+texture = ExtResource( 8 )
 
 [node name="AngelScoreLabel" type="RichTextLabel" parent="."]
 modulate = Color( 0, 0.00392157, 1, 1 )
@@ -74,41 +105,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="touchButtons" type="Control" parent="."]
-visible = false
+[node name="touchButtonsRight" type="Control" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -304.0
+margin_left = -200.0
 margin_top = -232.0
 margin_bottom = -56.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="buttonFire" type="TouchScreenButton" parent="touchButtons"]
-position = Vector2( 16, 112 )
+[node name="buttonFire" type="TouchScreenButton" parent="touchButtonsRight"]
+position = Vector2( 16, 16 )
+scale = Vector2( 2, 2 )
 normal = ExtResource( 3 )
 action = "shoot"
 
-[node name="buttonDown" type="TouchScreenButton" parent="touchButtons"]
-position = Vector2( 176, 112 )
+[node name="touchButtonsLeft" type="Control" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -296.0
+margin_right = 424.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonDown" type="TouchScreenButton" parent="touchButtonsLeft"]
+position = Vector2( 136, 136 )
+scale = Vector2( 2, 2 )
 normal = ExtResource( 5 )
 action = "key_down"
 
-[node name="buttonUp" type="TouchScreenButton" parent="touchButtons"]
-position = Vector2( 176, -16 )
+[node name="buttonUp" type="TouchScreenButton" parent="touchButtonsLeft"]
+position = Vector2( 136, -48 )
+scale = Vector2( 2, 2 )
 normal = ExtResource( 2 )
 action = "key_up"
 
-[node name="buttonLeft" type="TouchScreenButton" parent="touchButtons"]
-position = Vector2( 128, 48 )
+[node name="buttonLeft" type="TouchScreenButton" parent="touchButtonsLeft"]
+position = Vector2( 0, 48 )
+scale = Vector2( 2, 2 )
 normal = ExtResource( 6 )
 passby_press = true
 action = "key_left"
 
-[node name="buttonRight" type="TouchScreenButton" parent="touchButtons"]
-position = Vector2( 224, 48 )
+[node name="buttonRight" type="TouchScreenButton" parent="touchButtonsLeft"]
+position = Vector2( 272, 48 )
+scale = Vector2( 2, 2 )
 normal = ExtResource( 4 )
 action = "key_right"
