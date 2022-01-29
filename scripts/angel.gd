@@ -8,8 +8,10 @@ var jumping = false
 
 func get_input(delta):
 	if Input.is_action_pressed("key_right"):
+		get_node("Sprite").set_flip_h(false)
 		velocity.x = lerp(velocity.x, vars.WALK_SPEED, 0.3)
 	elif Input.is_action_pressed("key_left"):
+		get_node("Sprite").set_flip_h(true)
 		velocity.x = lerp(velocity.x, vars.WALK_SPEED*-1, 0.3)
 	else:
 		# smoothen walk
