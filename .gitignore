@@ -6,5 +6,8 @@ export.cfg
 .mono/
 data_*/
 
+# PyCharm-specific ignores
+.idea/*
+
 # Export dir
 /dist
