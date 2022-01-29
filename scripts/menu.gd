@@ -26,7 +26,7 @@ func _input(event):
 
 
 func _on_StartButton_pressed():
-	var active_scene = get_tree().change_scene("res://scenes/level.tscn")
+	var active_scene = get_tree().change_scene("res://scenes/w1-1.tscn")
 
 
 func _on_OptionsButton_pressed():
