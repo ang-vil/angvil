@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/Angvil_logo.png" type="Texture" id=2]
@@ -14,6 +14,20 @@ font_data = ExtResource( 6 )
 
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -97,10 +111,10 @@ texture = ExtResource( 3 )
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 53.0
-margin_top = -293.0
-margin_right = 235.0
-margin_bottom = -104.0
+margin_left = 64.0
+margin_top = -244.0
+margin_right = 246.0
+margin_bottom = -64.0
 theme = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -109,16 +123,16 @@ __meta__ = {
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 margin_right = 182.0
 margin_bottom = 43.0
-focus_neighbour_top = NodePath("../OptionsButton")
-focus_neighbour_bottom = NodePath("../ExitButton")
+focus_neighbour_top = NodePath("../ExitButton")
+focus_neighbour_bottom = NodePath("../OptionsButton")
 text = "run game"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 margin_top = 47.0
 margin_right = 182.0
 margin_bottom = 90.0
-focus_neighbour_top = NodePath("../ExitButton")
-focus_neighbour_bottom = NodePath("../StartButton")
+focus_neighbour_top = NodePath("../StartButton")
+focus_neighbour_bottom = NodePath("../CreditsButton")
 text = "options"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
@@ -133,8 +147,8 @@ text = "credits"
 margin_top = 141.0
 margin_right = 182.0
 margin_bottom = 184.0
-focus_neighbour_top = NodePath("../StartButton")
-focus_neighbour_bottom = NodePath("../OptionsButton")
+focus_neighbour_top = NodePath("../CreditsButton")
+focus_neighbour_bottom = NodePath("../StartButton")
 text = "leave game"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -146,6 +160,7 @@ margin_left = 50.0
 margin_top = 50.0
 margin_right = 974.0
 margin_bottom = 550.0
+theme = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -161,16 +176,16 @@ __meta__ = {
 
 [node name="CreditsRichTextLabel" type="RichTextLabel" parent="CreditsPopupPanel/CreditsVBoxContainer"]
 margin_right = 916.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
+margin_bottom = 444.0
+rect_min_size = Vector2( 50, 444 )
 text = "ANG/VIL
 
 Credit to https://www.FesliyanStudios.com for the background music."
 
 [node name="CreditsCloseButton" type="Button" parent="CreditsPopupPanel/CreditsVBoxContainer"]
-margin_top = 90.0
+margin_top = 448.0
 margin_right = 916.0
-margin_bottom = 110.0
+margin_bottom = 491.0
 text = "close credits"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -181,6 +196,7 @@ margin_left = 50.0
 margin_top = 50.0
 margin_right = 974.0
 margin_bottom = 550.0
+theme = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -194,17 +210,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FullscreenCheckBox" type="CheckBox" parent="OptionsPopupPanel/OptionsVBoxContainer"]
-margin_left = 10.0
-margin_top = 247.0
-margin_right = 208.0
-margin_bottom = 292.0
+[node name="CheckButton" type="CheckButton" parent="OptionsPopupPanel/OptionsVBoxContainer"]
+margin_right = 916.0
+margin_bottom = 45.0
 text = "Fullscreen"
 
-[node name="OptionsCloseButton" type="Button" parent="OptionsPopupPanel/OptionsVBoxContainer"]
-margin_top = 90.0
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsPopupPanel/OptionsVBoxContainer"]
+margin_top = 49.0
 margin_right = 916.0
-margin_bottom = 110.0
+margin_bottom = 92.0
+
+[node name="Label" type="Label" parent="OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer"]
+margin_left = 8.0
+margin_top = 3.0
+margin_right = 456.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "display resolution"
+
+[node name="OptionButton" type="OptionButton" parent="OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer"]
+margin_left = 460.0
+margin_right = 916.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+align = 1
+
+[node name="OptionsCloseButton" type="Button" parent="OptionsPopupPanel/OptionsVBoxContainer"]
+margin_top = 96.0
+margin_right = 916.0
+margin_bottom = 139.0
 text = "close options"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -215,5 +249,6 @@ __meta__ = {
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="CreditsPopupPanel/CreditsVBoxContainer/CreditsCloseButton" to="." method="_on_CreditsCloseButton_pressed"]
-[connection signal="pressed" from="OptionsPopupPanel/OptionsVBoxContainer/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_pressed"]
+[connection signal="pressed" from="OptionsPopupPanel/OptionsVBoxContainer/CheckButton" to="." method="_on_CheckButton_pressed"]
+[connection signal="item_selected" from="OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="OptionsPopupPanel/OptionsVBoxContainer/OptionsCloseButton" to="." method="_on_OptionsCloseButton_pressed"]
