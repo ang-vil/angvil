@@ -10,6 +10,7 @@ extents = Vector2( 14, 16 )
 [node name="angel" type="KinematicBody2D"]
 position = Vector2( 0, -220 )
 scale = Vector2( 2, 2 )
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
