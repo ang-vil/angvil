@@ -8,3 +8,6 @@ data_*/
 
 # Export dir
 /dist
+
+# release artefact
+/angvil-ggj2022.zip
