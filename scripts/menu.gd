@@ -4,28 +4,41 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var res_scale = [40, 60, 80, 100, 120, 160, 240, 320, 400, 480]
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$VBoxContainer/StartButton.grab_focus()
+	
 	# hide exit button in Browser
 	if OS.get_name() == "HTML5":
 		$VBoxContainer/ExitButton.visible = false
+		
 	# hide exit button on Nintento Switch
 	if OS.get_name() == "Switch":
 		$VBoxContainer/ExitButton.visible = false
-	# OptionButton Options
-	for k in res_scale.size():
-		var x = 16 * res_scale[k]
-		var y = 9 * res_scale[k]
-		var t = "%s x %s" % [x, y]
-		$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.add_item(t, k)
-		$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(k, Vector2(x, y))
 	
-	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.select(2)
-	OS.set_window_size($OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.get_item_metadata(2))
+	# OptionButton Options
+	var max_x_res = OS.get_screen_size().x
+	var max_y_res = OS.get_screen_size().y
+	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.add_item(String(max_x_res) + "x" + String(max_y_res), 0)
+	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(0, Vector2(max_x_res, max_y_res))
+	var new_x_res = round(max_x_res * 0.666666)
+	var new_y_res = round(max_y_res * 0.666666)
+	var res_text = String(new_x_res) + "x" + String(new_y_res)
+	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.add_item(res_text, 1)
+	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(1, Vector2(new_x_res, new_y_res))
+	new_x_res = round(new_x_res * 0.75)
+	new_y_res = round(new_y_res * 0.75)
+	res_text = String(new_x_res) + "x" + String(new_y_res)
+	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.add_item(res_text, 2)
+	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(2, Vector2(new_x_res, new_y_res))
+	new_x_res = round(new_x_res * 0.666666)
+	new_y_res = round(new_y_res * 0.666666)
+	res_text = String(new_x_res) + "x" + String(new_y_res)
+	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.add_item(res_text, 3)
+	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(3, Vector2(new_x_res, new_y_res))
+	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.select(1)
+	OS.set_window_size($OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.get_item_metadata(1))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
