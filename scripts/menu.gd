@@ -88,6 +88,7 @@ func _on_CheckButton_pressed():
 func _on_OptionButton_item_selected(_index):
 	var id = $OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.get_selected_id()
 	OS.set_window_size($OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.get_item_metadata(id))
-	var screen_size = OS.get_screen_size()
-	var window_size = OS.get_window_size()
-	OS.set_window_position(screen_size*0.5 - window_size*0.5)
+	# move window possition (error on dual screeen)
+	# var screen_size = OS.get_screen_size()
+	# var window_size = OS.get_window_size()
+	# OS.set_window_position(screen_size*0.5 - window_size*0.5)
