@@ -30,14 +30,14 @@ func get_input(delta):
 		
 	if Input.is_action_pressed("key_down"):
 		if velocity.y == 0:
-			get_node("Sprite").scale.y = 0.5
-			get_node("Sprite").offset.y = -20
+			get_node("Sprite").scale.y = -0.5
+			get_node("Sprite").offset.y = 20
 			get_node("CollisionShape2D").scale.y = 0.5
 			get_node("CollisionShape2D").position.y = -8
 		else:
 			velocity.y -= delta * vars.GRAVITY
 	else:
-		get_node("Sprite").scale.y = 1
+		get_node("Sprite").scale.y = -1
 		get_node("Sprite").offset.y = 0
 		get_node("CollisionShape2D").scale.y = 1
 		get_node("CollisionShape2D").position.y = 0
