@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/angel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/devil.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/fonts/share-tech-mono/ShareTechMono-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/sounds/game_sound.mp3" type="AudioStream" id=8]
 [ext_resource path="res://scenes/goal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=3]
 size = 100
@@ -91,3 +92,5 @@ __meta__ = {
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 autoplay = true
+
+[node name="hud" parent="." instance=ExtResource( 10 )]
