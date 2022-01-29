@@ -1,5 +1,7 @@
 extends CanvasLayer
 
 func _ready():
-	if OS.get_name() == "HTML5" or OS.get_name() == "iOS" or OS.get_name() == "Android":
-		$Control/touchButtons.visible = true
+	$Control/DebugText.text = OS.get_name() + " on " + OS.get_model_name()
+	if OS.get_name() in ["iOS", "Android"]:
+		if OS.get_name() == "HTML5" and OS.get_model_name() == "Heinz":
+			$Control/touchButtons.visible = true
