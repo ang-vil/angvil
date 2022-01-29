@@ -1,4 +1,4 @@
 extends Node
 
-var nextScene = 'menu'
-var currentScene = 'levels/w1-3'
+var nextScene = 'levels/w1-3'
+var currentScene = 'levels/w1-2'
