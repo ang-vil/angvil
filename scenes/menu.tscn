@@ -6,7 +6,7 @@
 [ext_resource path="res://scripts/background_left.gd" type="Script" id=4]
 [ext_resource path="res://scripts/background_right.gd" type="Script" id=5]
 [ext_resource path="res://assets/fonts/share-tech-mono/ShareTechMono-Regular.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://assets/sounds/2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/menu_sound.mp3" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
