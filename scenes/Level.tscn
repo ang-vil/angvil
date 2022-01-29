@@ -13,25 +13,30 @@ extents = Vector2( 14, 16 )
 
 [node name="Level" type="Node2D"]
 
-[node name="ColorHeaven" type="ColorRect" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1, 0 )
+
+[node name="ColorHeaven" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -512.0
-margin_top = -320.0
-margin_right = 512.0
+margin_left = -4096.0
+margin_top = -4096.0
+margin_right = 4096.0
 color = Color( 0.615686, 0.819608, 0.905882, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorHell" type="ColorRect" parent="."]
+[node name="ColorHell" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -512.0
-margin_right = 512.0
-margin_bottom = 320.0
+margin_left = -4096.0
+margin_right = 4096.0
+margin_bottom = 4096.0
 color = Color( 0.513726, 0.227451, 0.219608, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
