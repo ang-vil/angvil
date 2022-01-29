@@ -27,4 +27,3 @@ smoothing_enabled = true
 stream = ExtResource( 1 )
 
 [node name="bulletspawn" type="Position2D" parent="."]
-position = Vector2( 32, 0 )
