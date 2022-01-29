@@ -40,7 +40,7 @@ func _ready():
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.add_item(res_text, 3)
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(3, Vector2(new_x_res, new_y_res))
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.select(1)
-	OS.set_window_size($OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.get_item_metadata(1))
+	_on_OptionButton_item_selected(1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -88,3 +88,6 @@ func _on_CheckButton_pressed():
 func _on_OptionButton_item_selected(_index):
 	var id = $OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.get_selected_id()
 	OS.set_window_size($OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.get_item_metadata(id))
+	var screen_size = OS.get_screen_size()
+	var window_size = OS.get_window_size()
+	OS.set_window_position(screen_size*0.5 - window_size*0.5)
