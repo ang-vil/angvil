@@ -22,4 +22,4 @@ func _input(event):
 	if event is InputEventKey and event.pressed and !event.echo:
 		# Quit on Escape press.
 		if event.scancode == KEY_ESCAPE:
-			var active_scene = get_tree().change_scene("res://scenes/menu.tscn")
+			var _active_scene = get_tree().change_scene("res://scenes/menu.tscn")
