@@ -4,4 +4,4 @@
 
 Help devil and angel to solve the levels together.
 
-Play it online on [https://angvil.de](https://dangvil.de)
+Play it online on [https://angvil.de](https://angvil.de)
