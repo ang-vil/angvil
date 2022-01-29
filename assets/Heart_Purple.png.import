@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/buttonUp.png-aa90f4cf5568075d7e5ca7be5b496532.stex"
+path="res://.import/Heart_Purple.png-b040c31b91f10b3d12c49e143ccc6003.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/touchbuttons/buttonUp.png"
-dest_files=[ "res://.import/buttonUp.png-aa90f4cf5568075d7e5ca7be5b496532.stex" ]
+source_file="res://assets/Heart_Purple.png"
+dest_files=[ "res://.import/Heart_Purple.png-b040c31b91f10b3d12c49e143ccc6003.stex" ]
 
 [params]
 
