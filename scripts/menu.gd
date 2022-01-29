@@ -17,7 +17,7 @@ func _ready():
 	# hide exit button on Nintento Switch
 	if OS.get_name() == "Switch":
 		$VBoxContainer/ExitButton.visible = false
-		$VBoxContainer/OptionsButton = false
+		$VBoxContainer/OptionsButton.visible = false
 	
 	# OptionButton Options
 	var max_x_res = OS.get_screen_size().x
