@@ -22,6 +22,6 @@ script = ExtResource( 7 )
 [node name="logosprite" type="Sprite" parent="."]
 texture = ExtResource( 5 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 autoplay = true
