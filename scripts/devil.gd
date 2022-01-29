@@ -14,12 +14,14 @@ func get_input(delta):
 		get_node("Sprite").set_flip_h(false)
 		direction.x = 1
 		velocity.x = lerp(velocity.x, vars.WALK_SPEED, 0.3)
-		$AnimationPlayer.play("walk")
+		if velocity.y == 0:
+			$AnimationPlayer.play("walk")
 	elif Input.is_action_pressed("key_left"):
 		get_node("Sprite").set_flip_h(true)
 		direction.x = -1
 		velocity.x = lerp(velocity.x, vars.WALK_SPEED*-1, 0.3)
-		$AnimationPlayer.play("walk")
+		if velocity.y == 0:
+			$AnimationPlayer.play("walk")
 	else:
 		# smoothen walk
 		velocity.x = lerp(velocity.x, 0, 0.1)
@@ -29,6 +31,7 @@ func get_input(delta):
 
 	if Input.is_action_just_pressed("key_up") and velocity.y == 0:
 		jumping = true;
+		$AnimationPlayer.play("jump")
 		
 	if Input.is_action_pressed("key_down"):
 		get_node("Sprite").scale.y = -0.5
