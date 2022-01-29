@@ -114,7 +114,7 @@ texture = ExtResource( 3 )
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
-margin_top = -244.0
+margin_top = -290.0
 margin_right = 246.0
 margin_bottom = -64.0
 theme = SubResource( 2 )
@@ -134,21 +134,29 @@ margin_top = 47.0
 margin_right = 182.0
 margin_bottom = 90.0
 focus_neighbour_top = NodePath("../StartButton")
-focus_neighbour_bottom = NodePath("../CreditsButton")
+focus_neighbour_bottom = NodePath("../HelpButton")
 text = "options"
 
-[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+[node name="HelpButton" type="Button" parent="VBoxContainer"]
 margin_top = 94.0
 margin_right = 182.0
 margin_bottom = 137.0
 focus_neighbour_top = NodePath("../OptionsButton")
+focus_neighbour_bottom = NodePath("../CreditsButton")
+text = "help"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+margin_top = 141.0
+margin_right = 182.0
+margin_bottom = 184.0
+focus_neighbour_top = NodePath("../HelpButton")
 focus_neighbour_bottom = NodePath("../ExitButton")
 text = "credits"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
-margin_top = 141.0
+margin_top = 188.0
 margin_right = 182.0
-margin_bottom = 184.0
+margin_bottom = 231.0
 focus_neighbour_top = NodePath("../CreditsButton")
 focus_neighbour_bottom = NodePath("../StartButton")
 text = "leave game"
@@ -190,6 +198,43 @@ margin_top = 449.0
 margin_right = 916.0
 margin_bottom = 492.0
 text = "close credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpPopupPanel" type="PopupPanel" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 974.0
+margin_bottom = 550.0
+theme = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpVBoxContainer" type="VBoxContainer" parent="HelpPopupPanel"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 920.0
+margin_bottom = 496.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpRichTextLabel" type="RichTextLabel" parent="HelpPopupPanel/HelpVBoxContainer"]
+margin_right = 916.0
+margin_bottom = 445.0
+rect_min_size = Vector2( 50, 444 )
+size_flags_vertical = 3
+text = "HELP
+
+Feel free to add help for a simple game!!!"
+
+[node name="HelpCloseButton" type="Button" parent="HelpPopupPanel/HelpVBoxContainer"]
+margin_top = 449.0
+margin_right = 916.0
+margin_bottom = 492.0
+text = "close help"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -261,9 +306,11 @@ __meta__ = {
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HelpButton" to="." method="_on_HelpButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="CreditsPopupPanel/CreditsVBoxContainer/CreditsCloseButton" to="." method="_on_CreditsCloseButton_pressed"]
+[connection signal="pressed" from="HelpPopupPanel/HelpVBoxContainer/HelpCloseButton" to="." method="_on_HelpCloseButton_pressed"]
 [connection signal="pressed" from="OptionsPopupPanel/OptionsVBoxContainer/CheckButton" to="." method="_on_CheckButton_pressed"]
 [connection signal="item_selected" from="OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="OptionsPopupPanel/OptionsVBoxContainer/OptionsCloseButton" to="." method="_on_OptionsCloseButton_pressed"]
