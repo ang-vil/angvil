@@ -41,8 +41,6 @@ func _ready():
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(3, Vector2(new_x_res, new_y_res))
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.select(1)
 	_on_OptionButton_item_selected(1)
-	
-	$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel1.text = String($AudioStreamPlayer.volume_db)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -122,7 +120,6 @@ func _on_MenuMusicValueHSlider_value_changed(value):
 	$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel2.text = String(menu_music_value) + "%"
 	if menu_music_value <= 100:
 		$AudioStreamPlayer.volume_db = round(menu_music_value / 1.25 - 80)
-		$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel1.text = String($AudioStreamPlayer.volume_db)
 	if menu_music_value > 100:
 		$AudioStreamPlayer.volume_db = menu_music_value - 100
 		$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel1.text = String($AudioStreamPlayer.volume_db)
