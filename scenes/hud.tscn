@@ -20,25 +20,38 @@ default_font = SubResource( 5 )
 [node name="hud" type="CanvasLayer"]
 script = ExtResource( 7 )
 
-[node name="Control" type="Control" parent="."]
+[node name="DevilScoreLabel" type="RichTextLabel" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AngelScore" type="RichTextLabel" parent="Control"]
-modulate = Color( 0, 0.00392157, 1, 1 )
-margin_right = 208.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( -552, 64 )
+margin_left = -272.0
+margin_top = -40.0
+margin_right = -50.0
+rect_pivot_offset = Vector2( 312, 280 )
 theme = SubResource( 6 )
-text = "Angel Score:"
+text = "Devil Score: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AngelScoreLabel" type="RichTextLabel" parent="Control"]
+[node name="DevilScore" type="RichTextLabel" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -76.0
+margin_top = -40.0
+rect_pivot_offset = Vector2( 112, 280 )
+theme = SubResource( 6 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AngelScore" type="RichTextLabel" parent="."]
 modulate = Color( 0, 0.00392157, 1, 1 )
 margin_left = 200.0
 margin_right = 272.0
@@ -50,64 +63,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DevilScore" type="RichTextLabel" parent="Control"]
-modulate = Color( 1, 0, 0, 1 )
-margin_left = 752.0
-margin_top = 560.0
-margin_right = 976.0
-margin_bottom = 600.0
-rect_pivot_offset = Vector2( 312, 280 )
+[node name="AngelScoreLabel" type="RichTextLabel" parent="."]
+modulate = Color( 0, 0.00392157, 1, 1 )
+margin_right = 192.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( -552, 64 )
 theme = SubResource( 6 )
-text = "Devil Score: "
+text = "Angel Score:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DevilScoreLabel" type="RichTextLabel" parent="Control"]
-modulate = Color( 1, 0, 0, 1 )
-margin_left = 944.0
-margin_top = 560.0
-margin_right = 1024.0
-margin_bottom = 600.0
-rect_pivot_offset = Vector2( 112, 280 )
-theme = SubResource( 6 )
-text = "0000"
+[node name="touchButtons" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -304.0
+margin_top = -232.0
+margin_bottom = -56.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="touchButtons" type="Control" parent="Control"]
-visible = false
-margin_left = 720.0
-margin_top = 360.0
-margin_right = 1024.0
-margin_bottom = 536.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="buttonFire" type="TouchScreenButton" parent="Control/touchButtons"]
+[node name="buttonFire" type="TouchScreenButton" parent="touchButtons"]
 position = Vector2( 16, 112 )
 normal = ExtResource( 3 )
 action = "shoot"
 
-[node name="buttonDown" type="TouchScreenButton" parent="Control/touchButtons"]
+[node name="buttonDown" type="TouchScreenButton" parent="touchButtons"]
 position = Vector2( 176, 112 )
 normal = ExtResource( 5 )
 action = "key_down"
 
-[node name="buttonUp" type="TouchScreenButton" parent="Control/touchButtons"]
+[node name="buttonUp" type="TouchScreenButton" parent="touchButtons"]
 position = Vector2( 176, -16 )
 normal = ExtResource( 2 )
 action = "key_up"
 
-[node name="buttonLeft" type="TouchScreenButton" parent="Control/touchButtons"]
+[node name="buttonLeft" type="TouchScreenButton" parent="touchButtons"]
 position = Vector2( 128, 48 )
 normal = ExtResource( 6 )
 passby_press = true
 action = "key_left"
 
-[node name="buttonRight" type="TouchScreenButton" parent="Control/touchButtons"]
+[node name="buttonRight" type="TouchScreenButton" parent="touchButtons"]
 position = Vector2( 224, 48 )
 normal = ExtResource( 4 )
 action = "key_right"
