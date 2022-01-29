@@ -31,3 +31,8 @@ func get_input(delta):
 func _physics_process(delta):
 	get_input(delta)
 	velocity = move_and_slide(velocity)
+
+func _process(delta):
+	if not get_node('devil_visibility').is_on_screen():
+		var background = get_node("../background/")
+		background.colorHell = background.HEAVEN_COLOR

@@ -18,3 +18,5 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.5, 0 )
 shape = SubResource( 1 )
+
+[node name="devil_visibility" type="VisibilityNotifier2D" parent="."]

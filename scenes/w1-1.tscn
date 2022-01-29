@@ -79,6 +79,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+current = true
 smoothing_enabled = true
 script = ExtResource( 6 )
 
@@ -86,4 +87,4 @@ script = ExtResource( 6 )
 
 [node name="devil" parent="." instance=ExtResource( 2 )]
 
-[node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
+[node name="background" parent="." instance=ExtResource( 3 )]
