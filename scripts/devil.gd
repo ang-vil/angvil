@@ -55,3 +55,4 @@ func _process(_delta):
 		var background = get_node("../background/")
 		background.colorHell = background.HEAVEN_COLOR
 		get_node("..").gameOver = true
+		var _active_scene = get_tree().change_scene("res://scenes/gameover.tscn")
