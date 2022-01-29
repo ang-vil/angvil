@@ -41,3 +41,11 @@ func _on_OptionsButton_pressed():
 
 func _on_ExitButton_pressed():
 	get_tree().quit()
+
+
+func _on_FullscreenCheckBox_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen
+#	if $VBoxContainer/FullscreenCheckBox.toggle_mode == true:
+#		OS.window_fullscreen = true
+#	else:
+#		OS.window_fullscreen = !OS.window_fullscreen
