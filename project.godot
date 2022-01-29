@@ -15,6 +15,10 @@ run/main_scene="res://scenes/menu.tscn"
 boot_splash/image="res://assets/Angvil_logo.png"
 config/icon="res://assets/icon.png"
 
+[autoload]
+
+Settings="*res://scripts/settings.gd"
+
 [display]
 
 window/dpi/allow_hidpi=true

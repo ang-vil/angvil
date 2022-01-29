@@ -104,3 +104,23 @@ func _on_HelpButton_pressed():
 
 func _on_HelpCloseButton_pressed():
 	$HelpPopupPanel.visible = false
+
+
+func _on_GameMusicValueHSlider_value_changed(value):
+	var game_music_value = $OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueHSlider.value
+	$OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueLabel2.text = String(game_music_value) + "%"
+	if game_music_value <= 100:
+		Settings.game_music_value_g = round(game_music_value / 1.25 - 80)
+	if game_music_value > 100:
+		Settings.game_music_value_g = game_music_value - 100
+	
+
+func _on_MenuMusicValueHSlider_value_changed(value):
+	var menu_music_value = $OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueHSlider.value
+	$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel2.text = String(menu_music_value) + "%"
+	if menu_music_value <= 100:
+		$AudioStreamPlayer.volume_db = round(menu_music_value / 1.25 - 80)
+	if menu_music_value > 100:
+		$AudioStreamPlayer.volume_db = menu_music_value - 100
+		$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel1.text = String($AudioStreamPlayer.volume_db)
+	
