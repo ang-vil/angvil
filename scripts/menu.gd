@@ -4,6 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var res_scale = [40, 60, 80, 100, 120, 160, 240, 320, 400, 480]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,12 +17,13 @@ func _ready():
 	if OS.get_name() == "Switch":
 		$VBoxContainer/ExitButton.visible = false
 	# OptionButton Options
-	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.add_item("1024 x 600", 0)
-	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(0, Vector2(1024, 600))
-	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.add_item("1920 x 1080", 1)
-	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(1, Vector2(1920, 1080))
-	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.add_item("400 x 400", 2)
-	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(2, Vector2(400, 400))
+	for k in res_scale.size():
+		var x = 16 * res_scale[k]
+		var y = 9 * res_scale[k]
+		var t = "%s x %s" % [x, y]
+		$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.add_item(t, k)
+		$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(k, Vector2(x, y))
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
