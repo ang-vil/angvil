@@ -7,7 +7,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _input(event):
+func _input(_event):
 	# Record keys.
 	if Input.is_action_pressed("key_pause"):
-			get_tree().change_scene("res://scenes/menu.tscn")
+			var _active_scene = get_tree().change_scene("res://scenes/menu.tscn")
