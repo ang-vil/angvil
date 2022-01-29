@@ -22,4 +22,6 @@ shape = SubResource( 1 )
 [node name="jumpsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
 
+[node name="bulletspawn" type="Position2D" parent="."]
+
 [node name="angle_visibility" type="VisibilityNotifier2D" parent="."]
