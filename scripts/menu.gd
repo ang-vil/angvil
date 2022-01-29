@@ -30,8 +30,11 @@ func _on_StartButton_pressed():
 
 
 func _on_OptionsButton_pressed():
-	# if we have a lot of option we can add a option scene
-	pass # Replace with function body.
+	$OptionsPopupPanel.popup()
+
+
+func _on_OptionsCloseButton_pressed():
+	$OptionsPopupPanel.visible = false
 
 
 func _on_ExitButton_pressed():
