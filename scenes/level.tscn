@@ -11,7 +11,7 @@
 [node name="Level" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
+[node name="background" parent="." instance=ExtResource( 4 )]
 
 [node name="angel" parent="." instance=ExtResource( 1 )]
 
