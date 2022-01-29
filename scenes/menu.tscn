@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/Angvil_logo.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scripts/background_left.gd" type="Script" id=4]
 [ext_resource path="res://scripts/background_right.gd" type="Script" id=5]
 [ext_resource path="res://assets/fonts/share-tech-mono/ShareTechMono-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/sounds/menu_sound.mp3" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -142,6 +143,17 @@ focus_neighbour_top = NodePath("../StartButton")
 focus_neighbour_bottom = NodePath("../OptionsButton")
 text = "leave game"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 569.0
+margin_top = 572.0
+margin_right = 1013.0
+margin_bottom = 588.0
+text = "Credit to https://www.FesliyanStudios.com for the background music."
+
 [node name="CreditsPopupPanel" type="PopupPanel" parent="."]
 margin_right = 1024.0
 margin_bottom = 550.0
@@ -171,6 +183,7 @@ margin_top = 54.0
 margin_right = 924.0
 margin_bottom = 74.0
 text = "close credits"
+
 __meta__ = {
 "_edit_use_anchors_": false
 }
