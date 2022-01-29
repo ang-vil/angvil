@@ -58,7 +58,4 @@ func _process(_delta):
 	if not get_node('angle_visibility').is_on_screen():
 		var background = get_node("../background/")
 		background.colorHeaven = background.HELL_COLOR
-		get_node("..").gameOver = true
-		var text = get_node("../camera/layer/gameOverText")
-		text.text = 'DEVIL wins!'
-		text.visible = true
+		get_node("..").gameOver('DEVIL wins!')
