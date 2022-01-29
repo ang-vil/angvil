@@ -27,3 +27,6 @@ func gameOver(message, win = false):
 	var text = get_node("camera/layer/gameOverText")
 	text.text = message
 	text.visible = true
+
+	yield(get_tree().create_timer(3.0), "timeout")
+	var _active_scene = get_tree().change_scene("res://scenes/" + nextScene + ".tscn")
