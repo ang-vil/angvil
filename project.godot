@@ -12,6 +12,8 @@ config_version=4
 
 config/name="angvil"
 run/main_scene="res://scenes/menu.tscn"
+boot_splash/image="res://assets/Angvil_logo.png"
+config/icon="res://assets/icon.png"
 
 [display]
 
