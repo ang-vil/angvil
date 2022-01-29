@@ -37,7 +37,7 @@ func updateAngelHearts():
 	for angelHeart in angelHearts:
 		angelHeart.modulate = Color(0, 0, 0)
 	for i in range(angelFullHeartCount):
-		angelHearts[i].modulate = Color(0, 0, 0)
+		angelHearts[i].modulate = Color(1, 1, 1)
 	if angelFullHeartCount < 1:
 		get_node("..").gameOver('DEVIL wins!')		
 
@@ -45,7 +45,7 @@ func updateDevilHearts():
 	for devilHeart in devilHearts:
 		devilHeart.modulate = Color(0, 0, 0)
 	for i in range(devilFullHeartCount):
-		devilHearts[i].modulate = Color(0, 0, 0)
+		devilHearts[i].modulate = Color(1, 1, 1)
 	if devilFullHeartCount < 1:
 		get_node("..").gameOver('DEVIL wins!')
 		

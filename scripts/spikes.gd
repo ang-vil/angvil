@@ -3,10 +3,8 @@ extends Area2D
 onready var angel = get_parent().get_node("angel")
 onready var devil = get_parent().get_node("devil")
 
-func _physics_process(_delta):
-	if overlaps_body(angel):
+func _on_spikes_body_entered(body):
+	if body.name == "angel":
 		get_parent().get_node("hud").removeAngelHeart()
-		angel.jumping = true
-	elif overlaps_body(devil):
+	if body.name == "devil":
 		get_parent().get_node("hud").removeDevilHeart()
-		devil.jumping = true

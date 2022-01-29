@@ -57,7 +57,7 @@ position = Vector2( 24, 16 )
 texture = ExtResource( 9 )
 
 [node name="DevilHeart2" type="Sprite" parent="DevilScore"]
-position = Vector2( 96, 16 )
+position = Vector2( 48, 16 )
 texture = ExtResource( 9 )
 
 [node name="DevilHeart3" type="Sprite" parent="DevilScore"]
@@ -65,7 +65,7 @@ position = Vector2( 72, 16 )
 texture = ExtResource( 9 )
 
 [node name="DevilHeart4" type="Sprite" parent="DevilScore"]
-position = Vector2( 48, 16 )
+position = Vector2( 96, 16 )
 texture = ExtResource( 9 )
 
 [node name="AngelScore" type="HSplitContainer" parent="."]
