@@ -9,6 +9,9 @@ var jumping = false
 var bullet = preload("res://scenes/bullet.tscn")
 var direction = Vector2(1, 0)
 
+func _ready():
+	$AnimationPlayer.play("flying")
+
 func get_input(delta):
 	if Input.is_action_pressed("key_right"):
 		get_node("Sprite").set_flip_h(false)
