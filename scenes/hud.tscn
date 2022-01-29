@@ -44,8 +44,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -120.0
-margin_top = -40.0
-margin_right = -8.0
+margin_top = -38.0
+margin_right = 5.0
+margin_bottom = 2.0
 rect_pivot_offset = Vector2( 112, 280 )
 theme = SubResource( 6 )
 __meta__ = {
@@ -57,7 +58,7 @@ position = Vector2( 24, 16 )
 texture = ExtResource( 9 )
 
 [node name="DevilHeart2" type="Sprite" parent="DevilScore"]
-position = Vector2( 96, 16 )
+position = Vector2( 48, 16 )
 texture = ExtResource( 9 )
 
 [node name="DevilHeart3" type="Sprite" parent="DevilScore"]
@@ -65,12 +66,13 @@ position = Vector2( 72, 16 )
 texture = ExtResource( 9 )
 
 [node name="DevilHeart4" type="Sprite" parent="DevilScore"]
-position = Vector2( 48, 16 )
+position = Vector2( 96, 16 )
 texture = ExtResource( 9 )
 
 [node name="AngelScore" type="HSplitContainer" parent="."]
-margin_left = 184.0
-margin_right = 296.0
+margin_left = 191.0
+margin_top = 4.0
+margin_right = 314.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 112, 280 )
 theme = SubResource( 6 )
@@ -96,16 +98,19 @@ texture = ExtResource( 8 )
 
 [node name="AngelScoreLabel" type="RichTextLabel" parent="."]
 modulate = Color( 0, 0.00392157, 1, 1 )
-margin_right = 192.0
+margin_left = 6.0
+margin_right = 209.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( -552, 64 )
 theme = SubResource( 6 )
 text = "Angel Score:"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="touchButtonsRight" type="Control" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -124,6 +129,7 @@ normal = ExtResource( 3 )
 action = "shoot"
 
 [node name="touchButtonsLeft" type="Control" parent="."]
+visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -296.0
