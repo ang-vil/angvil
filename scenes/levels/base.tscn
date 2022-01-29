@@ -1,11 +1,38 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/angel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/devil.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/levels/base.gd" type="Script" id=4]
+[ext_resource path="res://assets/cloud_heaven.png" type="Texture" id=5]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=6]
 [ext_resource path="res://assets/sounds/game_sound.mp3" type="AudioStream" id=8]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 7.14585, 10.1316, 12.0138, 6.18322, 18.342, 5.96686, 20.3433, 8.61717, 22.5609, 6.56183, 27.3747, 6.45366, 30.4036, 9.48257, 31.8099, 14.5127, 24.9949, 21.7605, 15.259, 22.8896, 8.76849, 23.0519, 0.114431, 17.2104, 0.114431, 13.7488, 3.14335, 10.8821 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "cloud_heaven.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 4 )
@@ -14,6 +41,15 @@ script = ExtResource( 4 )
 current = true
 smoothing_enabled = true
 script = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = SubResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="angel" parent="." instance=ExtResource( 1 )]
 
