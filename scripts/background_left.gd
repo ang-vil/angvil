@@ -10,8 +10,9 @@ extends ColorRect
 func _ready():
 	yield(get_tree(), "idle_frame")
 
-	rect_position = Vector2(0, 0)
-	rect_size = Vector2(512, 600)
+	rect_position = Vector2(30, -200)
+	rect_size = Vector2(600, 1000)
+	rect_rotation = 15
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

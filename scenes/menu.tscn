@@ -32,18 +32,20 @@ __meta__ = {
 
 [node name="background_left" type="ColorRect" parent="menu_background"]
 margin_bottom = 600.0
+rect_rotation = 15.0
 color = Color( 0.615686, 0.819608, 0.905882, 1 )
 script = ExtResource( 4 )
 
 [node name="background_right" type="ColorRect" parent="menu_background"]
-margin_left = 12.0
-margin_right = 1024.0
+margin_left = 577.0
+margin_right = 1589.0
 margin_bottom = 600.0
+rect_rotation = 15.0
 color = Color( 0.215686, 0.211765, 0.211765, 1 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="menu_background"]
-position = Vector2( 674, 297 )
+position = Vector2( 512, 240 )
 texture = ExtResource( 2 )
 
 [node name="CloudHeaven" type="Sprite" parent="."]
@@ -51,7 +53,7 @@ position = Vector2( 102, 116 )
 texture = ExtResource( 3 )
 
 [node name="CloudHeaven1" type="Sprite" parent="CloudHeaven"]
-position = Vector2( 249, 159 )
+position = Vector2( 380, 20 )
 texture = ExtResource( 3 )
 
 [node name="CloudHeaven2" type="Sprite" parent="CloudHeaven"]
@@ -75,15 +77,15 @@ position = Vector2( 115, -66 )
 texture = ExtResource( 3 )
 
 [node name="CloudHeaven7" type="Sprite" parent="CloudHeaven"]
-position = Vector2( 173, 77 )
+position = Vector2( 265, -4 )
 texture = ExtResource( 3 )
 
 [node name="CloudHeaven8" type="Sprite" parent="CloudHeaven"]
-position = Vector2( 371, 138 )
+position = Vector2( 340, 127 )
 texture = ExtResource( 3 )
 
 [node name="CloudHeaven9" type="Sprite" parent="CloudHeaven"]
-position = Vector2( 278, 91 )
+position = Vector2( 175, 302 )
 texture = ExtResource( 3 )
 
 [node name="CloudHeaven10" type="Sprite" parent="CloudHeaven"]
