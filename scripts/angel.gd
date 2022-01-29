@@ -22,7 +22,7 @@ func get_input(delta):
 		$jumpsound.play()
 
 	if jumping:
-		velocity.y = lerp(velocity.y, vars.JUMP_SPEED*-1, 0.6)
+		velocity.y = lerp(velocity.y, vars.JUMP_SPEED*-1, 0.8)
 		
 		if math.compare_float(velocity.y, vars.JUMP_SPEED * -1):
 			jumping = false

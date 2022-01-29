@@ -21,7 +21,7 @@ func get_input(delta):
 		jumping = true;
 
 	if jumping:
-		velocity.y = lerp(velocity.y, vars.JUMP_SPEED, 0.6)
+		velocity.y = lerp(velocity.y, vars.JUMP_SPEED, 0.8)
 		
 		if math.compare_float(velocity.y, vars.JUMP_SPEED):
 			jumping = false
