@@ -5,26 +5,20 @@ var math = preload("res://scripts/helper/math.gd")
 
 var velocity = Vector2()
 var jumping = false
-var canMoveInAir = false
 
 func get_input(delta):
 	if Input.is_action_pressed("key_right"):
-		if velocity.y == 0 or canMoveInAir:
-			canMoveInAir = false
-			get_node("Sprite").set_flip_h(false)
-			velocity.x = lerp(velocity.x, vars.WALK_SPEED, 0.3)
+		get_node("Sprite").set_flip_h(false)
+		velocity.x = lerp(velocity.x, vars.WALK_SPEED, 0.3)
 	elif Input.is_action_pressed("key_left"):
-		if velocity.y == 0 or canMoveInAir:
-			canMoveInAir = false
-			get_node("Sprite").set_flip_h(true)
-			velocity.x = lerp(velocity.x, vars.WALK_SPEED*-1, 0.3)
+		get_node("Sprite").set_flip_h(true)
+		velocity.x = lerp(velocity.x, vars.WALK_SPEED*-1, 0.3)
 	else:
 		# smoothen walk
 		velocity.x = lerp(velocity.x, 0, 0.1)
 
 	if Input.is_action_just_pressed("key_up") and velocity.y == 0:
-		jumping = true
-		canMoveInAir = true
+		jumping = true;
 		$jumpsound.play()
 
 	if jumping:
