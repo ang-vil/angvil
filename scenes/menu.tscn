@@ -106,20 +106,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+[node name="StartButton" type="Button" parent="VBoxContainer"]
 margin_right = 182.0
 margin_bottom = 43.0
-focus_neighbour_top = NodePath("../ExitButton")
-focus_neighbour_bottom = NodePath("../StartButton")
-text = "options"
-
-[node name="StartButton" type="Button" parent="VBoxContainer"]
-margin_top = 47.0
-margin_right = 182.0
-margin_bottom = 90.0
 focus_neighbour_top = NodePath("../OptionsButton")
 focus_neighbour_bottom = NodePath("../ExitButton")
 text = "run game"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+margin_top = 47.0
+margin_right = 182.0
+margin_bottom = 90.0
+focus_neighbour_top = NodePath("../ExitButton")
+focus_neighbour_bottom = NodePath("../StartButton")
+text = "options"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
 margin_top = 94.0
@@ -210,8 +210,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="CreditsPopupPanel/CreditsVBoxContainer/CreditsCloseButton" to="." method="_on_CreditsCloseButton_pressed"]
