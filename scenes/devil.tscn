@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/devil.gd" type="Script" id=1]
 [ext_resource path="res://assets/tile_map.png" type="Texture" id=2]
 [ext_resource path="res://assets/sounds/loose_live_devil.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/pickup.wav" type="AudioStream" id=4]
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
@@ -78,4 +79,8 @@ anims/walk = SubResource( 2 )
 
 [node name="lostLife" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+volume_db = 8.0
+
+[node name="gainLife" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
 volume_db = 8.0
