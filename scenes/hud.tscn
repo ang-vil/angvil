@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/fonts/share-tech-mono/ShareTechMono-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/touchbuttons/buttonUp.png" type="Texture" id=2]
@@ -10,8 +10,6 @@
 [ext_resource path="res://assets/Heart_Red.png" type="Texture" id=8]
 [ext_resource path="res://assets/Heart_Purple.png" type="Texture" id=9]
 [ext_resource path="res://assets/touchbuttons/buttonX.png" type="Texture" id=10]
-[ext_resource path="res://assets/sounds/loose_live_devil.ogg" type="AudioStream" id=11]
-[ext_resource path="res://assets/sounds/loose_live_angel.wav" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
@@ -180,11 +178,3 @@ __meta__ = {
 position = Vector2( 8, 0 )
 normal = ExtResource( 10 )
 action = "key_pause"
-
-[node name="angelLostLife" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 12 )
-volume_db = 8.0
-
-[node name="devilLostLife" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 11 )
-volume_db = 8.0

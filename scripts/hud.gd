@@ -25,6 +25,7 @@ func _ready():
 	updateDevilHearts()
 
 func addAngelHeart():
+	get_node("../angel/gainLife").play()
 	Settings.angelHeartCount += 1
 	
 	if Settings.angelHeartCount > 4:
@@ -33,6 +34,7 @@ func addAngelHeart():
 	updateAngelHearts()
 	
 func addDevilHeart():
+	get_node("../devil/gainLife").play()
 	Settings.devilHeartCount += 1
 	
 	if Settings.devilHeartCount > 4:
@@ -41,12 +43,12 @@ func addDevilHeart():
 	updateAngelHearts()
 
 func removeAngelHeart():
-	$angelLostLife.play()
+	get_node("../angel/lostLife").play()
 	Settings.angelHeartCount -= 1
 	updateAngelHearts()
 	
 func removeDevilHeart():
-	$devilLostLife.play()
+	get_node("../devil/lostLife").play()
 	Settings.devilHeartCount -= 1
 	updateDevilHearts()
 	

@@ -55,8 +55,8 @@ region_rect = Rect2( 32, 32, 32, 32 )
 position = Vector2( 0, -1.5 )
 shape = SubResource( 1 )
 
-[connection signal="area_entered" from="." to="." method="_on_bullet_area_entered"]
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/rotate = SubResource( 2 )
 
+[connection signal="area_entered" from="." to="." method="_on_bullet_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_bullet_body_entered"]
