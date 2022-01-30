@@ -969,6 +969,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="trident_spawn" type="Position2D" parent="camera"]
+position = Vector2( 1000, -180 )
+
+[node name="dove_spawn" type="Position2D" parent="camera"]
+position = Vector2( 1000, 180 )
+
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
 tile_set = SubResource( 2 )
