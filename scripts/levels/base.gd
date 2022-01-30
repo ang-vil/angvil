@@ -24,7 +24,7 @@ func gameOver(message, win = false):
 	if win:
 		nextScene = get_node("..").nextScene
 	else:
-		nextScene = get_node("..").currentScene
+		nextScene = "menu"
 	isGameOver = true
 	var text = get_node("camera/layer/gameOverText")
 	text.text = message
@@ -32,3 +32,6 @@ func gameOver(message, win = false):
 
 	yield(get_tree().create_timer(3.0), "timeout")
 	var _active_scene = get_tree().change_scene("res://scenes/" + nextScene + ".tscn")
+
+func restartLevel():
+	get_tree().change_scene("res://scenes/" + get_node("..").currentScene + ".tscn")
