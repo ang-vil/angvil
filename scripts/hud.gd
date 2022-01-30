@@ -20,44 +20,49 @@ func _ready():
 	devilHearts.push_back($DevilScore/DevilHeart2)
 	devilHearts.push_back($DevilScore/DevilHeart3)
 	devilHearts.push_back($DevilScore/DevilHeart4)
+	
+	updateAngelHearts()
+	updateDevilHearts()
 
 func addAngelHeart():
-	angelFullHeartCount += 1
+	Settings.angelHeartCount += 1
 	
-	if angelFullHeartCount > 4:
-		angelFullHeartCount = 4
+	if Settings.angelHeartCount > 4:
+		Settings.angelHeartCount = 4
 	
 	updateAngelHearts()
 	
 func addDevilHeart():
-	devilFullHeartCount += 1
+	Settings.devilHeartCount += 1
 	
-	if devilFullHeartCount > 4:
-		devilFullHeartCount = 4
+	if Settings.devilHeartCount > 4:
+		Settings.devilHeartCount = 4
 	
 	updateAngelHearts()
 
 func removeAngelHeart():
-	angelFullHeartCount -= 1
+	$angelLostLife.play()
+	Settings.angelHeartCount -= 1
 	updateAngelHearts()
 	
 func removeDevilHeart():
-	devilFullHeartCount -= 1
+	$devilLostLife.play()
+	Settings.devilHeartCount -= 1
 	updateDevilHearts()
 	
 func updateAngelHearts():
 	for angelHeart in angelHearts:
 		angelHeart.modulate = Color(0, 0, 0)
-	for i in range(angelFullHeartCount):
+	for i in range(Settings.angelHeartCount):
 		angelHearts[i].modulate = Color(1, 1, 1)
-	if angelFullHeartCount < 1:
-		get_node("..").gameOver('DEVIL wins!')		
+	if Settings.angelHeartCount < 1:
+		get_node("..").gameOver('DEVIL wins!')
 
 func updateDevilHearts():
 	for devilHeart in devilHearts:
 		devilHeart.modulate = Color(0, 0, 0)
-	for i in range(devilFullHeartCount):
+	for i in range(Settings.devilHeartCount):
 		devilHearts[i].modulate = Color(1, 1, 1)
-	if devilFullHeartCount < 1:
-		get_node("..").gameOver('DEVIL wins!')
+	if Settings.devilHeartCount < 1:
+		get_node("..").gameOver('ANGEL wins!')
 		

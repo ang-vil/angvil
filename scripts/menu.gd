@@ -95,6 +95,8 @@ func _input(event):
 				get_tree().quit()
 
 func _on_StartButton_pressed():
+	Settings.angelHeartCount = 4
+	Settings.devilHeartCount = 4
 	var _active_scene = get_tree().change_scene("res://scenes/levels/w1-1.tscn")
 
 
