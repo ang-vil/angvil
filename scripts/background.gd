@@ -15,5 +15,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	heavenNode.set_frame_color(Color(COLOR_HEAVEN))
-	hellNode.set_frame_color(Color(COLOR_HELL))
+	heavenNode.set_frame_color(Color(colorHeaven))
+	hellNode.set_frame_color(Color(colorHell))
