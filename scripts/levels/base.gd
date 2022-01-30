@@ -9,6 +9,7 @@ var enemy_trident = preload("res://scenes/enemy_trident.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().paused = false
+	$levelName.text = get_node("..").currentScene
 
 	Settings.currentLevel = get_node("..").currentScene
 	# set music volume from settings

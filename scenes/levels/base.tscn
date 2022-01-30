@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://scenes/angel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/devil.tscn" type="PackedScene" id=2]
@@ -941,6 +941,15 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 7/z_index = 0
 
+[sub_resource type="DynamicFont" id=89]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="Theme" id=90]
+default_font = SubResource( 89 )
+
 [node name="baseLevel" type="Node2D"]
 script = ExtResource( 4 )
 
@@ -998,3 +1007,16 @@ autoplay = true
 position = Vector2( 500, 0 )
 
 [node name="hud" parent="." instance=ExtResource( 10 )]
+
+[node name="levelName" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -94.0
+margin_top = -360.0
+margin_right = 94.0
+margin_bottom = -320.0
+theme = SubResource( 90 )
+text = "LEVEL XXX"
+__meta__ = {
+"_edit_use_anchors_": false
+}
