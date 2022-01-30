@@ -7,6 +7,7 @@ var nextScene
 func _ready():
 	# set music volume from settings
 	$music.volume_db = Settings.game_music_value_g
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 
 func _input(_event):
