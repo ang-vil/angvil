@@ -29,12 +29,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -304.0
+margin_left = -193.0
 margin_top = -40.0
-margin_right = -82.0
+margin_right = -113.0
 rect_pivot_offset = Vector2( 312, 280 )
 theme = SubResource( 6 )
-text = "Devil Score: "
+text = "Devil"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,9 +71,9 @@ position = Vector2( 96, 16 )
 texture = ExtResource( 9 )
 
 [node name="AngelScore" type="HSplitContainer" parent="."]
-margin_left = 191.0
+margin_left = 82.0
 margin_top = 4.0
-margin_right = 314.0
+margin_right = 205.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 112, 280 )
 theme = SubResource( 6 )
@@ -104,7 +104,7 @@ margin_right = 209.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( -552, 64 )
 theme = SubResource( 6 )
-text = "Angel Score:"
+text = "Angel"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
