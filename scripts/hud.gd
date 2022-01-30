@@ -21,6 +21,22 @@ func _ready():
 	devilHearts.push_back($DevilScore/DevilHeart3)
 	devilHearts.push_back($DevilScore/DevilHeart4)
 
+func addAngelHeart():
+	angelFullHeartCount += 1
+	
+	if angelFullHeartCount > 4:
+		angelFullHeartCount = 4
+	
+	updateAngelHearts()
+	
+func addDevilHeart():
+	devilFullHeartCount += 1
+	
+	if devilFullHeartCount > 4:
+		devilFullHeartCount = 4
+	
+	updateAngelHearts()
+
 func removeAngelHeart():
 	angelFullHeartCount -= 1
 	updateAngelHearts()
