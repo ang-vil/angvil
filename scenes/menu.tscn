@@ -214,6 +214,7 @@ margin_top = 569.0
 margin_right = 972.0
 margin_bottom = 612.0
 size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 0.615686, 0.819608, 0.905882, 1 )
 text = "close credits"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -253,6 +254,7 @@ Feel free to add help for a simple game!!!"
 margin_top = 569.0
 margin_right = 972.0
 margin_bottom = 612.0
+custom_colors/font_color_focus = Color( 0.615686, 0.819608, 0.905882, 1 )
 text = "close help"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -382,6 +384,7 @@ text = "
 margin_top = 569.0
 margin_right = 972.0
 margin_bottom = 612.0
+custom_colors/font_color_focus = Color( 0.615686, 0.819608, 0.905882, 1 )
 text = "close options"
 __meta__ = {
 "_edit_use_anchors_": false
