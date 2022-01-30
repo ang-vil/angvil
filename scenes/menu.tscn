@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/Angvil_logo.png" type="Texture" id=2]
@@ -21,6 +21,12 @@ font_data = ExtResource( 6 )
 
 [sub_resource type="Theme" id=4]
 default_font = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=8]
+default_font = SubResource( 7 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 32
@@ -127,6 +133,7 @@ margin_right = 182.0
 margin_bottom = 43.0
 focus_neighbour_top = NodePath("../ExitButton")
 focus_neighbour_bottom = NodePath("../OptionsButton")
+custom_colors/font_color_focus = Color( 0.615686, 0.819608, 0.905882, 1 )
 text = "run game"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
@@ -135,6 +142,7 @@ margin_right = 182.0
 margin_bottom = 90.0
 focus_neighbour_top = NodePath("../StartButton")
 focus_neighbour_bottom = NodePath("../HelpButton")
+custom_colors/font_color_focus = Color( 0.615686, 0.819608, 0.905882, 1 )
 text = "options"
 
 [node name="HelpButton" type="Button" parent="VBoxContainer"]
@@ -143,6 +151,7 @@ margin_right = 182.0
 margin_bottom = 137.0
 focus_neighbour_top = NodePath("../OptionsButton")
 focus_neighbour_bottom = NodePath("../CreditsButton")
+custom_colors/font_color_focus = Color( 0.615686, 0.819608, 0.905882, 1 )
 text = "help"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
@@ -151,6 +160,7 @@ margin_right = 182.0
 margin_bottom = 184.0
 focus_neighbour_top = NodePath("../HelpButton")
 focus_neighbour_bottom = NodePath("../ExitButton")
+custom_colors/font_color_focus = Color( 0.615686, 0.819608, 0.905882, 1 )
 text = "credits"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
@@ -159,6 +169,7 @@ margin_right = 182.0
 margin_bottom = 231.0
 focus_neighbour_top = NodePath("../CreditsButton")
 focus_neighbour_bottom = NodePath("../StartButton")
+custom_colors/font_color_focus = Color( 0.615686, 0.819608, 0.905882, 1 )
 text = "leave game"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -168,8 +179,8 @@ autoplay = true
 [node name="CreditsPopupPanel" type="PopupPanel" parent="."]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 974.0
-margin_bottom = 550.0
+margin_right = 1030.0
+margin_bottom = 670.0
 theme = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -178,25 +189,30 @@ __meta__ = {
 [node name="CreditsVBoxContainer" type="VBoxContainer" parent="CreditsPopupPanel"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 920.0
-margin_bottom = 496.0
+margin_right = 976.0
+margin_bottom = 616.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CreditsRichTextLabel" type="RichTextLabel" parent="CreditsPopupPanel/CreditsVBoxContainer"]
-margin_right = 916.0
-margin_bottom = 445.0
+margin_right = 972.0
+margin_bottom = 565.0
 rect_min_size = Vector2( 50, 444 )
 size_flags_vertical = 3
+theme = SubResource( 8 )
 text = "ANG/VIL
 
-Credit to https://www.FesliyanStudios.com for the background music."
+Credit to https://www.FesliyanStudios.com for the background music.
+
+Our source code: https://github.com/ang-vil/angvil
+
+Licence: https://raw.githubusercontent.com/ang-vil/angvil/main/LICENSE"
 
 [node name="CreditsCloseButton" type="Button" parent="CreditsPopupPanel/CreditsVBoxContainer"]
-margin_top = 449.0
-margin_right = 916.0
-margin_bottom = 492.0
+margin_top = 569.0
+margin_right = 972.0
+margin_bottom = 612.0
 text = "close credits"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -240,7 +256,6 @@ __meta__ = {
 }
 
 [node name="OptionsPopupPanel" type="PopupPanel" parent="."]
-visible = true
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 974.0
