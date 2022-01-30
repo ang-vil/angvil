@@ -58,6 +58,8 @@ func _input(event):
 				$OptionsPopupPanel.visible = false
 			elif $CreditsPopupPanel.visible:
 				$CreditsPopupPanel.visible = false
+			elif $HelpPopupPanel.visible:
+				$HelpPopupPanel.visible = false
 			else:
 				get_tree().quit()
 
