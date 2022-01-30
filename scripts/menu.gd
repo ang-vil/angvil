@@ -139,12 +139,12 @@ func _on_HelpCloseButton_pressed():
 	$HelpPopupPanel.visible = false
 
 
-func _on_GameMusicValueHSlider_value_changed(value):
+func _on_GameMusicValueHSlider_value_changed(_value):
 	Settings.game_music_value_g = $OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueHSlider.value
 	_set_game_music_value()
 
 
-func _on_MenuMusicValueHSlider_value_changed(value):
+func _on_MenuMusicValueHSlider_value_changed(_value):
 	Settings.menu_music_value_g = $OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueHSlider.value
 	_set_menu_music_value()
 
