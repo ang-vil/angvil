@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/fonts/share-tech-mono/ShareTechMono-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/touchbuttons/buttonUp.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scripts/hud.gd" type="Script" id=7]
 [ext_resource path="res://assets/Heart_Red.png" type="Texture" id=8]
 [ext_resource path="res://assets/Heart_Purple.png" type="Texture" id=9]
+[ext_resource path="res://assets/touchbuttons/buttonX.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
@@ -162,3 +163,18 @@ position = Vector2( 175, 80 )
 scale = Vector2( 2, 2 )
 normal = ExtResource( 3 )
 action = "shoot"
+
+[node name="touchButtonX" type="Control" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -96.0
+margin_bottom = 88.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonX" type="TouchScreenButton" parent="touchButtonX"]
+position = Vector2( 8, 0 )
+normal = ExtResource( 10 )
+action = "key_pause"

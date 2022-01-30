@@ -9,6 +9,7 @@ var devilFullHeartCount = 4;
 func _ready():
 	$touchButtonsRight.visible = Settings.touch_buttons
 	$touchButtonsLeft.visible = Settings.touch_buttons
+	$touchButtonX.visible = Settings.touch_buttons
 		
 	angelHearts.push_back($AngelScore/AngelHeart1)
 	angelHearts.push_back($AngelScore/AngelHeart2)
