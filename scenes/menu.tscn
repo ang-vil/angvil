@@ -240,6 +240,7 @@ __meta__ = {
 }
 
 [node name="OptionsPopupPanel" type="PopupPanel" parent="."]
+visible = true
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 974.0
@@ -338,8 +339,14 @@ max_value = 120.0
 step = 5.0
 value = 100.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="OptionsPopupPanel/OptionsVBoxContainer"]
+[node name="TouchButtonsCheckButton" type="CheckButton" parent="OptionsPopupPanel/OptionsVBoxContainer"]
 margin_top = 178.0
+margin_right = 916.0
+margin_bottom = 223.0
+text = "touch buttons"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OptionsPopupPanel/OptionsVBoxContainer"]
+margin_top = 227.0
 margin_right = 916.0
 margin_bottom = 445.0
 size_flags_vertical = 3
@@ -371,4 +378,5 @@ __meta__ = {
 [connection signal="item_selected" from="OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
 [connection signal="value_changed" from="OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueHSlider" to="." method="_on_MenuMusicValueHSlider_value_changed"]
 [connection signal="value_changed" from="OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueHSlider" to="." method="_on_GameMusicValueHSlider_value_changed"]
+[connection signal="pressed" from="OptionsPopupPanel/OptionsVBoxContainer/TouchButtonsCheckButton" to="." method="_on_TouchButtonsCheckButton_pressed"]
 [connection signal="pressed" from="OptionsPopupPanel/OptionsVBoxContainer/OptionsCloseButton" to="." method="_on_OptionsCloseButton_pressed"]

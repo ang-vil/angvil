@@ -64,6 +64,14 @@ func _ready():
 	_on_OptionButton_item_selected(1)
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	if Settings.touch_buttons_set == false:
+		if OS.get_name() in ["HTML5", "Android", "iOS"]:
+			if OS.has_touchscreen_ui_hint():
+				OS.hide_virtual_keyboard()
+				Settings.touch_buttons = true
+	
+	$OptionsPopupPanel/OptionsVBoxContainer/TouchButtonsCheckButton.pressed = Settings.touch_buttons
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -139,3 +147,8 @@ func _on_GameMusicValueHSlider_value_changed(value):
 func _on_MenuMusicValueHSlider_value_changed(value):
 	Settings.menu_music_value_g = $OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueHSlider.value
 	_set_menu_music_value()
+
+
+func _on_TouchButtonsCheckButton_pressed():
+	Settings.touch_buttons = !Settings.touch_buttons
+	Settings.touch_buttons_set = true
