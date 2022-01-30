@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var iAmDead = false
+
 var vars = preload("res://scripts/constants.gd")
 var math = preload("res://scripts/helper/math.gd")
 
@@ -73,7 +75,12 @@ func _process(_delta):
 
 		return
 
-	if not get_node('angle_visibility').is_on_screen():
+	if not get_node('angle_visibility').is_on_screen() and not iAmDead:
+		iAmDead = true
 		var background = get_node("../background/")
+		get_parent().get_node("hud").removeAngelHeart()
 		background.colorHeaven = background.COLOR_HELL
-		get_node("..").gameOver('DEVIL wins!')
+		yield(get_tree().create_timer(3.0), "timeout")
+		background.colorHeaven = background.COLOR_HEAVEN
+		if Settings.angelHeartCount > 0:
+			get_node("..").restartLevel()
