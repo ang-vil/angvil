@@ -957,10 +957,13 @@ layer = 42
 
 [node name="gameOverText" type="RichTextLabel" parent="camera/layer"]
 visible = false
-margin_left = 233.0
-margin_top = 361.0
-margin_right = 843.0
-margin_bottom = 488.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -305.0
+margin_top = -200.0
+margin_right = 305.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource( 4 )
