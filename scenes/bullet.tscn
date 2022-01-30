@@ -10,7 +10,7 @@ extents = Vector2( 16, 8.5 )
 resource_name = "rotate"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/path = NodePath("star:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -21,15 +21,35 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 90.0, 180.0, 270.0, 360.0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("heart:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 90.0, 180.0, 270.0, 360.0 ]
+}
 
 [node name="bullet" type="Area2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="star" type="Sprite" parent="."]
+visible = false
 rotation = 6.28319
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 320, 32, 32, 32 )
+
+[node name="heart" type="Sprite" parent="."]
+visible = false
+rotation = 6.28319
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 32, 32, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -1.5 )
