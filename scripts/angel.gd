@@ -68,5 +68,5 @@ func _process(_delta):
 	yield(get_tree(), "idle_frame")
 	if not get_node('angle_visibility').is_on_screen():
 		var background = get_node("../background/")
-		background.colorHeaven = background.HELL_COLOR
+		background.colorHeaven = background.COLOR_HELL
 		get_node("..").gameOver('DEVIL wins!')

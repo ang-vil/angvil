@@ -1,8 +1,24 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/sounds/jump_01.wav" type="AudioStream" id=1]
 [ext_resource path="res://scripts/angel.gd" type="Script" id=2]
-[ext_resource path="res://assets/angel.png" type="Texture" id=3]
+[ext_resource path="res://assets/tile_map.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14, 16 )
@@ -44,8 +60,9 @@ scale = Vector2( 2, 2 )
 collision_layer = 2
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 3 )
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 6 )
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
