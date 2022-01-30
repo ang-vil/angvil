@@ -75,8 +75,8 @@ func _process(_delta):
 
 		return
 
-	if not get_node('angle_visibility').is_on_screen():
-	    iAmDead = true
+	if not get_node('angle_visibility').is_on_screen() and not iAmDead:
+		iAmDead = true
 		var background = get_node("../background/")
 		get_parent().get_node("hud").removeAngelHeart()
 		background.colorHeaven = background.COLOR_HELL
