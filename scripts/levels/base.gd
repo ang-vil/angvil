@@ -13,7 +13,7 @@ func _ready():
 	$music.volume_db = 20 * log(Settings.game_music_value_g/100)
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	
+
 	# randomly spawn enemies
 	randomize()
 	var random_time
@@ -44,7 +44,7 @@ func gameOver(message, win = false):
 	if win:
 		nextScene = get_node("..").nextScene
 	else:
-		nextScene = get_node("..").currentScene
+		nextScene = "menu"
 	isGameOver = true
 	var text = get_node("camera/layer/gameOverText")
 	text.text = message
@@ -64,3 +64,6 @@ func spawn_enemy(enemy_name, height):
 		enemy.transform = $camera/trident_spawn.global_transform
 	enemy.transform.origin.y = height
 	owner.add_child(enemy)
+
+func restartLevel():
+	get_tree().change_scene("res://scenes/" + get_node("..").currentScene + ".tscn")

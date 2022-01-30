@@ -25,21 +25,21 @@ func _set_menu_music_value():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$VBoxContainer/StartButton.grab_focus()
-	
+
 	# set options on instance reload
 	_set_menu_music_value()
 	_set_game_music_value()
-	
+
 	# hide exit button in Browser
 	if OS.get_name() == "HTML5":
 		$VBoxContainer/ExitButton.visible = false
 		$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer.visible = false
-		
+
 	# hide exit button on Nintento Switch
 	if OS.get_name() == "Switch":
 		$VBoxContainer/ExitButton.visible = false
 		$VBoxContainer/OptionsButton.visible = false
-	
+
 	# OptionButton Options
 	var max_x_res = OS.get_screen_size().x
 	var max_y_res = OS.get_screen_size().y
@@ -62,15 +62,15 @@ func _ready():
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(3, Vector2(new_x_res, new_y_res))
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.select(1)
 	_on_OptionButton_item_selected(1)
-	
+
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+
 	if Settings.touch_buttons_set == false:
 		if OS.get_name() in ["HTML5", "Android", "iOS"]:
 			if OS.has_touchscreen_ui_hint():
 				OS.hide_virtual_keyboard()
 				Settings.touch_buttons = true
-	
+
 	$OptionsPopupPanel/OptionsVBoxContainer/TouchButtonsCheckButton.pressed = Settings.touch_buttons
 
 
@@ -95,8 +95,10 @@ func _input(event):
 				get_tree().quit()
 
 func _on_StartButton_pressed():
-	#var _active_scene = get_tree().change_scene("res://scenes/levels/w1-1.tscn")
 	var _active_scene = get_tree().change_scene("res://scenes/" + Settings.currentLevel + ".tscn")
+
+	Settings.angelHeartCount = 4
+	Settings.devilHeartCount = 4
 
 
 func _on_OptionsButton_pressed():

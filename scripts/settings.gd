@@ -8,3 +8,6 @@ var touch_buttons = false
 var touch_buttons_set = false
 
 var currentLevel = 'levels/w1-1'
+
+var angelHeartCount = 4
+var devilHeartCount = 4
