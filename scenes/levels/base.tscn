@@ -944,9 +944,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="baseLevel" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="goal" parent="." instance=ExtResource( 9 )]
-position = Vector2( 500, 0 )
-
 [node name="camera" type="Camera2D" parent="."]
 current = true
 smoothing_enabled = true
@@ -996,5 +993,8 @@ __meta__ = {
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 autoplay = true
+
+[node name="goal" parent="." instance=ExtResource( 9 )]
+position = Vector2( 500, 0 )
 
 [node name="hud" parent="." instance=ExtResource( 10 )]

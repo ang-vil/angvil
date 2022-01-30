@@ -7,13 +7,9 @@ var angelFullHeartCount = 4;
 var devilFullHeartCount = 4;
 
 func _ready():
-	$touchButtonsRight.visible = false
-	$touchButtonsLeft.visible = false
-	if OS.get_name() in ["HTML5", "Android", "iOS"]:
-		if OS.has_touchscreen_ui_hint():
-			OS.hide_virtual_keyboard()
-			$touchButtonsRight.visible = true
-			$touchButtonsLeft.visible = true
+	$touchButtonsRight.visible = Settings.touch_buttons
+	$touchButtonsLeft.visible = Settings.touch_buttons
+	$touchButtonX.visible = Settings.touch_buttons
 		
 	angelHearts.push_back($AngelScore/AngelHeart1)
 	angelHearts.push_back($AngelScore/AngelHeart2)
@@ -24,6 +20,22 @@ func _ready():
 	devilHearts.push_back($DevilScore/DevilHeart2)
 	devilHearts.push_back($DevilScore/DevilHeart3)
 	devilHearts.push_back($DevilScore/DevilHeart4)
+
+func addAngelHeart():
+	angelFullHeartCount += 1
+	
+	if angelFullHeartCount > 4:
+		angelFullHeartCount = 4
+	
+	updateAngelHearts()
+	
+func addDevilHeart():
+	devilFullHeartCount += 1
+	
+	if devilFullHeartCount > 4:
+		devilFullHeartCount = 4
+	
+	updateAngelHearts()
 
 func removeAngelHeart():
 	angelFullHeartCount -= 1

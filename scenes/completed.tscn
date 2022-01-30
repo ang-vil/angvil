@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/fonts/share-tech-mono/ShareTechMono-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/completed.gd" type="Script" id=2]
+[ext_resource path="res://scripts/background_right.gd" type="Script" id=4]
+[ext_resource path="res://assets/Angvil_logo.png" type="Texture" id=6]
+[ext_resource path="res://scripts/background_left.gd" type="Script" id=7]
+[ext_resource path="res://assets/sounds/menu_sound.mp3" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=3]
 size = 100
@@ -15,19 +19,62 @@ default_font = SubResource( 3 )
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="gameOverText" type="RichTextLabel" parent="."]
-margin_left = -1.0
-margin_right = 1463.0
-margin_bottom = 846.0
-rect_scale = Vector2( 0.7, 0.7 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource( 4 )
-text = "
- You've completed the game
-  Thank you for playing
-
-  Press A / Space to exit"
+[node name="menu_background" type="HSplitContainer" parent="."]
+margin_top = -1.0
+margin_right = 1024.0
+margin_bottom = 599.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="background_left" type="ColorRect" parent="menu_background"]
+margin_bottom = 600.0
+color = Color( 0.615686, 0.819608, 0.905882, 1 )
+script = ExtResource( 7 )
+
+[node name="background_right" type="ColorRect" parent="menu_background"]
+margin_left = 12.0
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.235294, 0.235294, 0.235294, 1 )
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="menu_background"]
+position = Vector2( 512, 240 )
+texture = ExtResource( 6 )
+
+[node name="gameOverText" type="RichTextLabel" parent="menu_background"]
+anchor_left = 0.0263672
+anchor_top = 0.0949999
+anchor_right = 0.0263672
+anchor_bottom = 0.095
+margin_left = 105.044
+margin_top = 265.189
+margin_right = 1569.04
+margin_bottom = 1125.19
+rect_scale = Vector2( 0.5, 0.5 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "
+[center]
+You've completed the game
+Tell others to do the same
+
+Press any key to exit
+[/center]"
+text = "
+
+You've completed the game
+Tell others to do the same
+
+Press any key to exit
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true

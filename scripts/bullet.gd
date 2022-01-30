@@ -3,6 +3,9 @@ extends Area2D
 var vars = preload("res://scripts/constants.gd")
 var direction
 
+func _ready():
+	$AnimationPlayer.play("rotate")
+
 func _physics_process(delta):
 	if direction.x > 0:
 		position += transform.x * vars.BULLET_SPEED * delta
@@ -17,3 +20,7 @@ func _on_bullet_body_entered(body):
 func _on_bullet_area_entered(area):
 	if area.name == "enemy_dove" or area.name == "enemy_trident":
 		queue_free()
+
+func setType(type):
+	$heart.visible = type == 'heart'
+	$star.visible = type == 'star'
