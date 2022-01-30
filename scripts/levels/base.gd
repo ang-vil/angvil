@@ -47,6 +47,7 @@ func gameOver(message, win = false):
 	if win:
 		nextScene = get_node("..").nextScene
 	else:
+		Settings.currentLevel = "levels/w1-1"
 		nextScene = "menu"
 	isGameOver = true
 	var text = get_node("camera/layer/gameOverText")
