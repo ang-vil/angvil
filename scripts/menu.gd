@@ -95,7 +95,8 @@ func _input(event):
 				get_tree().quit()
 
 func _on_StartButton_pressed():
-	var _active_scene = get_tree().change_scene("res://scenes/levels/w1-1.tscn")
+	#var _active_scene = get_tree().change_scene("res://scenes/levels/w1-1.tscn")
+	var _active_scene = get_tree().change_scene("res://scenes/" + Settings.currentLevel + ".tscn")
 
 
 func _on_OptionsButton_pressed():

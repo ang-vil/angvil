@@ -6,3 +6,5 @@ var game_music_value_g = 100
 
 var touch_buttons = false
 var touch_buttons_set = false
+
+var currentLevel = 'levels/w1-1'
