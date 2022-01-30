@@ -34,7 +34,7 @@ scale = Vector2( 2, 2 )
 
 [node name="spikes2" parent="Level" instance=ExtResource( 2 )]
 position = Vector2( 2656, 96 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 2, -2 )
 
 [node name="tutorial1" type="RichTextLabel" parent="Level"]
 margin_left = -248.0
