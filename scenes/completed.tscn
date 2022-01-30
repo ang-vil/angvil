@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/fonts/share-tech-mono/ShareTechMono-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/completed.gd" type="Script" id=2]
+[ext_resource path="res://assets/devil.png" type="Texture" id=3]
+[ext_resource path="res://assets/angel.png" type="Texture" id=4]
+[ext_resource path="res://assets/Heart_Red.png" type="Texture" id=5]
+[ext_resource path="res://assets/Heart_Purple.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=3]
 size = 100
@@ -16,18 +20,38 @@ default_font = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="gameOverText" type="RichTextLabel" parent="."]
-margin_left = -1.0
-margin_right = 1463.0
+margin_left = 27.0
+margin_right = 1531.0
 margin_bottom = 846.0
 rect_scale = Vector2( 0.7, 0.7 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource( 4 )
 text = "
- You've completed the game
-  Thank you for playing
+ You've completed the game.
+  Thank you for playing!
 
-  Press A / Space to exit"
+  Press A / Space to exit."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Devil" type="Sprite" parent="gameOverText"]
+position = Vector2( 867.143, 785.714 )
+scale = Vector2( 4.29464, 4.29464 )
+texture = ExtResource( 3 )
+
+[node name="HeartRed" type="Sprite" parent="gameOverText"]
+position = Vector2( 722.857, 671.429 )
+scale = Vector2( 2.77678, 2.77678 )
+texture = ExtResource( 5 )
+
+[node name="HeartPurple" type="Sprite" parent="gameOverText"]
+position = Vector2( 812.857, 670 )
+scale = Vector2( 3.22322, 3.22322 )
+texture = ExtResource( 6 )
+
+[node name="Angel" type="Sprite" parent="."]
+position = Vector2( 482, 553 )
+scale = Vector2( 2.9375, 2.9375 )
+texture = ExtResource( 4 )
