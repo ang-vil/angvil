@@ -1,5 +1,11 @@
 extends ParallaxBackground
 
+const COLOR_HEAVEN = '#9dd1e7'
+const COLOR_HELL = '#833a38'
+
+var colorHeaven = '#9dd1e7'
+var colorHell = '#833a38'
+
 onready var heavenNode = get_node("ParallaxLayer/ColorHeaven")
 onready var hellNode = get_node("ParallaxLayer/ColorHell")
 
