@@ -9,6 +9,8 @@ var jumping = false
 var bullet = preload("res://scenes/bullet.tscn")
 var direction = Vector2(1, 0)
 
+var firstRun = true
+
 func _ready():
 	$AnimationPlayer.play("flying")
 
@@ -66,7 +68,11 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 func _process(_delta):
-	yield(get_tree(), "idle_frame")
+	if firstRun:
+		firstRun = false
+
+		return
+
 	if not get_node('angle_visibility').is_on_screen():
 		var background = get_node("../background/")
 		background.colorHeaven = background.COLOR_HELL

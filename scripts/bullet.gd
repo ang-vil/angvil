@@ -16,6 +16,11 @@ func _on_bullet_body_entered(body):
 	if body.name != "angel" and body.name != "devil":
 		queue_free()
 
+
+func _on_bullet_area_entered(area):
+	if area.name == "enemy_dove" or area.name == "enemy_trident":
+		queue_free()
+
 func setType(type):
 	$heart.visible = type == 'heart'
 	$star.visible = type == 'star'

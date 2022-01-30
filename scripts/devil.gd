@@ -9,6 +9,8 @@ var jumping = false
 var bullet = preload("res://scenes/bullet.tscn")
 var direction = Vector2(1, 0)
 
+var firstRun = true
+
 func get_input(delta):
 	if Input.is_action_pressed("key_right"):
 		get_node("Sprite").set_flip_h(false)
@@ -67,7 +69,11 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 func _process(_delta):
-	yield(get_tree(), "idle_frame")
+	if firstRun:
+		firstRun = false
+
+		return
+
 	if not get_node('devil_visibility').is_on_screen():
 		var background = get_node("../background/")
 		background.colorHell = background.COLOR_HEAVEN
