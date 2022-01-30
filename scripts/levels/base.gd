@@ -6,7 +6,9 @@ var nextScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# set music volume from settings
-	$music.volume_db = Settings.game_music_value_g
+	$music.volume_db = 20 * log(Settings.game_music_value_g/100)
+
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 
 func _input(_event):

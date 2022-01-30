@@ -5,9 +5,30 @@ extends Control
 # var a = 2
 # var b = "text"
 
+
+# helper functions
+func _set_game_music_value():
+	var v = Settings.game_music_value_g
+	$OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueLabel2.text = String(v) + "%"
+	$OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueHSlider.value = v
+
+
+func _set_menu_music_value():
+	var v = Settings.menu_music_value_g
+	$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel2.text = String(v) + "%"
+	$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueHSlider.value = v
+	if v == 0:
+		v = 0.0001
+	$AudioStreamPlayer.volume_db = 20 * log(v/100)
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$VBoxContainer/StartButton.grab_focus()
+	
+	# set options on instance reload
+	_set_menu_music_value()
+	_set_game_music_value()
 	
 	# hide exit button in Browser
 	if OS.get_name() == "HTML5":
@@ -41,6 +62,8 @@ func _ready():
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(3, Vector2(new_x_res, new_y_res))
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.select(1)
 	_on_OptionButton_item_selected(1)
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -109,20 +132,10 @@ func _on_HelpCloseButton_pressed():
 
 
 func _on_GameMusicValueHSlider_value_changed(value):
-	var game_music_value = $OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueHSlider.value
-	$OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueLabel2.text = String(game_music_value) + "%"
-	if game_music_value <= 100:
-		Settings.game_music_value_g = round(game_music_value / 1.25 - 80)
-	if game_music_value > 100:
-		Settings.game_music_value_g = game_music_value - 100
-	
+	Settings.game_music_value_g = $OptionsPopupPanel/OptionsVBoxContainer/GameMusicValueHBoxContainer/GameMusicValueHSlider.value
+	_set_game_music_value()
+
 
 func _on_MenuMusicValueHSlider_value_changed(value):
-	var menu_music_value = $OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueHSlider.value
-	$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel2.text = String(menu_music_value) + "%"
-	if menu_music_value <= 100:
-		$AudioStreamPlayer.volume_db = round(menu_music_value / 1.25 - 80)
-	if menu_music_value > 100:
-		$AudioStreamPlayer.volume_db = menu_music_value - 100
-		$OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueLabel1.text = String($AudioStreamPlayer.volume_db)
-	
+	Settings.menu_music_value_g = $OptionsPopupPanel/OptionsVBoxContainer/MenuMusicValueHBoxContainer/MenuMusicValueHSlider.value
+	_set_menu_music_value()

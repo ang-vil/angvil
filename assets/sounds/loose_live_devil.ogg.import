@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/loose_live_devil.ogg-349460c2897a2e314ebf1a53da280b16.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/loose_live_devil.ogg"
+dest_files=[ "res://.import/loose_live_devil.ogg-349460c2897a2e314ebf1a53da280b16.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -307,7 +307,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 max_value = 120.0
-step = 5.0
+step = 10.0
 value = 100.0
 
 [node name="GameMusicValueHBoxContainer" type="HBoxContainer" parent="OptionsPopupPanel/OptionsVBoxContainer"]
