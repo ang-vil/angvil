@@ -62,6 +62,8 @@ func _ready():
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.set_item_metadata(3, Vector2(new_x_res, new_y_res))
 	$OptionsPopupPanel/OptionsVBoxContainer/HBoxContainer/OptionButton.select(1)
 	_on_OptionButton_item_selected(1)
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -79,6 +81,8 @@ func _input(event):
 				$OptionsPopupPanel.visible = false
 			elif $CreditsPopupPanel.visible:
 				$CreditsPopupPanel.visible = false
+			elif $HelpPopupPanel.visible:
+				$HelpPopupPanel.visible = false
 			else:
 				get_tree().quit()
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/fonts/share-tech-mono/ShareTechMono-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/completed.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=3]
 size = 100
@@ -12,6 +13,7 @@ font_data = ExtResource( 1 )
 default_font = SubResource( 3 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="gameOverText" type="RichTextLabel" parent="."]
 margin_left = -1.0

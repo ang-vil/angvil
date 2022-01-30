@@ -8,6 +8,8 @@ func _ready():
 	# set music volume from settings
 	$music.volume_db = 20 * log(Settings.game_music_value_g/100)
 
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
 
 func _input(_event):
 	# Record keys.
@@ -27,3 +29,6 @@ func gameOver(message, win = false):
 	var text = get_node("camera/layer/gameOverText")
 	text.text = message
 	text.visible = true
+
+	yield(get_tree().create_timer(3.0), "timeout")
+	var _active_scene = get_tree().change_scene("res://scenes/" + nextScene + ".tscn")

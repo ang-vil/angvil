@@ -115,18 +115,25 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -200.0
+margin_left = -344.0
 margin_top = -232.0
 margin_bottom = -56.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="buttonFire" type="TouchScreenButton" parent="touchButtonsRight"]
-position = Vector2( 16, 16 )
+[node name="buttonLeft" type="TouchScreenButton" parent="touchButtonsRight"]
+position = Vector2( 0, 20 )
 scale = Vector2( 2, 2 )
-normal = ExtResource( 3 )
-action = "shoot"
+normal = ExtResource( 6 )
+passby_press = true
+action = "key_left"
+
+[node name="buttonRight" type="TouchScreenButton" parent="touchButtonsRight"]
+position = Vector2( 170, 20 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 4 )
+action = "key_right"
 
 [node name="touchButtonsLeft" type="Control" parent="."]
 visible = false
@@ -139,26 +146,19 @@ __meta__ = {
 }
 
 [node name="buttonDown" type="TouchScreenButton" parent="touchButtonsLeft"]
-position = Vector2( 136, 136 )
+position = Vector2( 0, 80 )
 scale = Vector2( 2, 2 )
 normal = ExtResource( 5 )
 action = "key_down"
 
 [node name="buttonUp" type="TouchScreenButton" parent="touchButtonsLeft"]
-position = Vector2( 136, -48 )
+position = Vector2( 0, -90 )
 scale = Vector2( 2, 2 )
 normal = ExtResource( 2 )
 action = "key_up"
 
-[node name="buttonLeft" type="TouchScreenButton" parent="touchButtonsLeft"]
-position = Vector2( 0, 48 )
+[node name="buttonFire" type="TouchScreenButton" parent="touchButtonsLeft"]
+position = Vector2( 175, 80 )
 scale = Vector2( 2, 2 )
-normal = ExtResource( 6 )
-passby_press = true
-action = "key_left"
-
-[node name="buttonRight" type="TouchScreenButton" parent="touchButtonsLeft"]
-position = Vector2( 272, 48 )
-scale = Vector2( 2, 2 )
-normal = ExtResource( 4 )
-action = "key_right"
+normal = ExtResource( 3 )
+action = "shoot"
