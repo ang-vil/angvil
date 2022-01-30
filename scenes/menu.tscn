@@ -256,7 +256,10 @@ rect_min_size = Vector2( 50, 444 )
 size_flags_vertical = 3
 text = "HELP
 
-Feel free to add help for a simple game!!!"
+Run, jump and duck. Avoid the enemies and the spikes.
+Try to reach the rainbow and don't fall down!
+
+But beware, angel and devil should reach the goal together. And you're controling both of them at the same time!"
 
 [node name="HelpCloseButton" type="Button" parent="HelpPopupPanel/HelpVBoxContainer"]
 margin_top = 569.0
