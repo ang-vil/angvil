@@ -8,7 +8,7 @@ func _physics_process(delta):
 func _on_enemy_dove_body_entered(body):
 	if body.name == "devil":
 		get_parent().get_node("Level").get_node("hud").removeDevilHeart()
-		$devilLostLife.play()
+
 	queue_free()
 
 
