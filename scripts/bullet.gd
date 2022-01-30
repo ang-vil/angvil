@@ -15,3 +15,7 @@ func _physics_process(delta):
 func _on_bullet_body_entered(body):
 	if body.name != "angel" and body.name != "devil":
 		queue_free()
+
+func setType(type):
+	$heart.visible = type == 'heart'
+	$star.visible = type == 'star'

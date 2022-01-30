@@ -54,6 +54,7 @@ func get_input(delta):
 func shoot():
 	var b = bullet.instance()
 	b.direction = direction
+	b.setType('heart')
 	owner.add_child(b)
 	b.transform = $bulletspawn.global_transform
 
