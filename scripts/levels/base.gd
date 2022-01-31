@@ -3,6 +3,10 @@ extends Node
 var isGameOver = false
 var nextScene
 
+var spawn_enemies = true
+var spawn_enemies_min_sec = 2
+var spawn_enemies_max_sec = 5
+
 var enemy_dove = preload("res://scenes/enemy_dove.tscn")
 var enemy_trident = preload("res://scenes/enemy_trident.tscn")
 
@@ -24,7 +28,7 @@ func _ready():
 	var random_height
 	var viewport_height = get_viewport().get_visible_rect().size.y
 	while(true):
-		random_time = rand_range(2,5)
+		random_time = rand_range(spawn_enemies_min_sec,spawn_enemies_max_sec)
 		random_enemy = rand_range(0,2)
 		random_height = rand_range(0, viewport_height / 2)
 		yield(get_tree().create_timer(random_time),"timeout")
@@ -59,6 +63,9 @@ func gameOver(message, win = false):
 
 
 func spawn_enemy(enemy_name, height):
+	if not spawn_enemies:
+		return
+
 	var enemy
 	if enemy_name == 'dove':
 		enemy = enemy_dove.instance()
@@ -68,6 +75,7 @@ func spawn_enemy(enemy_name, height):
 		enemy.transform = $camera/trident_spawn.global_transform
 	enemy.transform.origin.y = height
 	owner.add_child(enemy)
+
 
 func restartLevel():
 	get_tree().change_scene("res://scenes/" + get_node("..").currentScene + ".tscn")
