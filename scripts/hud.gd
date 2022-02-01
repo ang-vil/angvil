@@ -15,11 +15,15 @@ func _ready():
 	angelHearts.push_back($AngelScore/AngelHeart2)
 	angelHearts.push_back($AngelScore/AngelHeart3)
 	angelHearts.push_back($AngelScore/AngelHeart4)
+	angelHearts.push_back($AngelScore/AngelHeart5)
+	angelHearts.push_back($AngelScore/AngelHeart6)
 
 	devilHearts.push_back($DevilScore/DevilHeart1)
 	devilHearts.push_back($DevilScore/DevilHeart2)
 	devilHearts.push_back($DevilScore/DevilHeart3)
 	devilHearts.push_back($DevilScore/DevilHeart4)
+	devilHearts.push_back($DevilScore/DevilHeart5)
+	devilHearts.push_back($DevilScore/DevilHeart6)
 	
 	updateAngelHearts()
 	updateDevilHearts()
@@ -28,8 +32,8 @@ func addAngelHeart():
 	get_node("../angel/gainLife").play()
 	Settings.angelHeartCount += 1
 	
-	if Settings.angelHeartCount > 4:
-		Settings.angelHeartCount = 4
+	if Settings.angelHeartCount > Settings.maxAngelHeartCount:
+		Settings.angelHeartCount = Settings.maxAngelHeartCount
 	
 	updateAngelHearts()
 	
@@ -37,8 +41,8 @@ func addDevilHeart():
 	get_node("../devil/gainLife").play()
 	Settings.devilHeartCount += 1
 	
-	if Settings.devilHeartCount > 4:
-		Settings.devilHeartCount = 4
+	if Settings.devilHeartCount > Settings.maxDevilHeartCount:
+		Settings.devilHeartCount = Settings.maxDevilHeartCount
 	
 	updateAngelHearts()
 

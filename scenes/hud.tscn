@@ -29,9 +29,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -193.0
+margin_left = -232.0
 margin_top = -40.0
-margin_right = -5.0
 rect_pivot_offset = Vector2( 312, 280 )
 theme = SubResource( 6 )
 text = "Devil"
@@ -44,11 +43,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -120.0
-margin_top = -38.0
-margin_right = 5.0
-margin_bottom = 2.0
-rect_pivot_offset = Vector2( 112, 280 )
+margin_left = -160.0
+margin_top = -40.0
+rect_pivot_offset = Vector2( 120, 16 )
 theme = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -67,13 +64,24 @@ position = Vector2( 72, 16 )
 texture = ExtResource( 9 )
 
 [node name="DevilHeart4" type="Sprite" parent="DevilScore"]
-position = Vector2( 96, 16 )
+position = Vector2( 120, 8 )
 texture = ExtResource( 9 )
+offset = Vector2( -24, 8 )
+
+[node name="DevilHeart5" type="Sprite" parent="DevilScore"]
+position = Vector2( 144, 8 )
+texture = ExtResource( 9 )
+offset = Vector2( -24, 8 )
+
+[node name="DevilHeart6" type="Sprite" parent="DevilScore"]
+position = Vector2( 168, 8 )
+texture = ExtResource( 9 )
+offset = Vector2( -24, 8 )
 
 [node name="AngelScore" type="HSplitContainer" parent="."]
 margin_left = 82.0
 margin_top = 4.0
-margin_right = 205.0
+margin_right = 256.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 112, 280 )
 theme = SubResource( 6 )
@@ -97,10 +105,18 @@ texture = ExtResource( 8 )
 position = Vector2( 96, 16 )
 texture = ExtResource( 8 )
 
+[node name="AngelHeart5" type="Sprite" parent="AngelScore"]
+position = Vector2( 121, 16 )
+texture = ExtResource( 8 )
+
+[node name="AngelHeart6" type="Sprite" parent="AngelScore"]
+position = Vector2( 149, 16 )
+texture = ExtResource( 8 )
+
 [node name="AngelScoreLabel" type="RichTextLabel" parent="."]
 modulate = Color( 0, 0.00392157, 1, 1 )
 margin_left = 6.0
-margin_right = 209.0
+margin_right = 248.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( -552, 64 )
 theme = SubResource( 6 )
