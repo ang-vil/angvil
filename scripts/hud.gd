@@ -10,17 +10,13 @@ func _ready():
 	$touchButtonsRight.visible = Settings.touch_buttons
 	$touchButtonsLeft.visible = Settings.touch_buttons
 	$touchButtonX.visible = Settings.touch_buttons
-		
-	angelHearts.push_back($AngelScore/AngelHeart1)
-	angelHearts.push_back($AngelScore/AngelHeart2)
-	angelHearts.push_back($AngelScore/AngelHeart3)
-	angelHearts.push_back($AngelScore/AngelHeart4)
-
-	devilHearts.push_back($DevilScore/DevilHeart1)
-	devilHearts.push_back($DevilScore/DevilHeart2)
-	devilHearts.push_back($DevilScore/DevilHeart3)
-	devilHearts.push_back($DevilScore/DevilHeart4)
 	
+	for i in range(1, Settings.maxAngelHeartCount+1):
+		angelHearts.push_back(get_node("AngelScore/AngelHeart" + str(i)))
+
+	for i in range(1, Settings.maxDevilHeartCount+1):
+		devilHearts.push_back(get_node("DevilScore/DevilHeart" + str(i)))
+
 	updateAngelHearts()
 	updateDevilHearts()
 
@@ -28,8 +24,8 @@ func addAngelHeart():
 	get_node("../angel/gainLife").play()
 	Settings.angelHeartCount += 1
 	
-	if Settings.angelHeartCount > 4:
-		Settings.angelHeartCount = 4
+	if Settings.angelHeartCount > Settings.maxAngelHeartCount:
+		Settings.angelHeartCount = Settings.maxAngelHeartCount
 	
 	updateAngelHearts()
 	
@@ -37,8 +33,8 @@ func addDevilHeart():
 	get_node("../devil/gainLife").play()
 	Settings.devilHeartCount += 1
 	
-	if Settings.devilHeartCount > 4:
-		Settings.devilHeartCount = 4
+	if Settings.devilHeartCount > Settings.maxDevilHeartCount:
+		Settings.devilHeartCount = Settings.maxDevilHeartCount
 	
 	updateAngelHearts()
 
