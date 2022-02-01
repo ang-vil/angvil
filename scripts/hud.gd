@@ -10,21 +10,13 @@ func _ready():
 	$touchButtonsRight.visible = Settings.touch_buttons
 	$touchButtonsLeft.visible = Settings.touch_buttons
 	$touchButtonX.visible = Settings.touch_buttons
-		
-	angelHearts.push_back($AngelScore/AngelHeart1)
-	angelHearts.push_back($AngelScore/AngelHeart2)
-	angelHearts.push_back($AngelScore/AngelHeart3)
-	angelHearts.push_back($AngelScore/AngelHeart4)
-	angelHearts.push_back($AngelScore/AngelHeart5)
-	angelHearts.push_back($AngelScore/AngelHeart6)
-
-	devilHearts.push_back($DevilScore/DevilHeart1)
-	devilHearts.push_back($DevilScore/DevilHeart2)
-	devilHearts.push_back($DevilScore/DevilHeart3)
-	devilHearts.push_back($DevilScore/DevilHeart4)
-	devilHearts.push_back($DevilScore/DevilHeart5)
-	devilHearts.push_back($DevilScore/DevilHeart6)
 	
+	for i in range(1, Settings.maxAngelHeartCount+1):
+		angelHearts.push_back(get_node("AngelScore/AngelHeart" + str(i)))
+
+	for i in range(1, Settings.maxDevilHeartCount+1):
+		devilHearts.push_back(get_node("DevilScore/DevilHeart" + str(i)))
+
 	updateAngelHearts()
 	updateDevilHearts()
 
