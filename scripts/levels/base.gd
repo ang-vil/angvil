@@ -70,4 +70,4 @@ func spawn_enemy(enemy_name, height):
 	owner.add_child(enemy)
 
 func restartLevel():
-	get_tree().change_scene("res://scenes/" + get_node("..").currentScene + ".tscn")
+	var _unused = get_tree().change_scene("res://scenes/" + get_node("..").currentScene + ".tscn")
