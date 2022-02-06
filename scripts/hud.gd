@@ -3,8 +3,8 @@ extends CanvasLayer
 var angelHearts = []
 var devilHearts = []
 
-var angelFullHeartCount = 4;
-var devilFullHeartCount = 4;
+var angelFullHeartCount = 4
+var devilFullHeartCount = 4
 
 func _ready():
 	$touchButtonsRight.visible = Settings.touch_buttons
