@@ -31,7 +31,8 @@ func _ready():
 		random_time = rand_range(spawn_enemies_min_sec,spawn_enemies_max_sec)
 		random_enemy = rand_range(0,2)
 		random_height = rand_range(0, viewport_height / 2)
-		$Timer.start(random_time); yield($Timer, "timeout")
+		$Timer.start(random_time)
+		yield($Timer, "timeout")
 		if random_enemy < 1:
 			spawn_enemy('dove', random_height)
 		else:

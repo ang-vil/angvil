@@ -33,7 +33,7 @@ func get_input(delta):
 		shoot()
 
 	if Input.is_action_just_pressed("key_up") and velocity.y == 0:
-		jumping = true;
+		jumping = true
 		$jumpsound.play()
 		
 	if Input.is_action_pressed("key_down"):
